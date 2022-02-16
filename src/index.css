@@ -1,13 +1,111 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.courseSelectorContainer {
+  margin-top: 10px;
+}
+.courseSelectorTitle {
+  font: 2.5rem bolder;
+  font-family: Arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.courseButton {
+  max-width: 50%;
+}
+.courseDescription {
+  color: aliceblue;
+}
+
+.descriptionTitle {
+  margin-top: 10%;
+}
+.courseDescriptor {
+  margin-top: 20px;
+  border: solid 2px #000000;
+}
+.courseCard {
+  margin: 20px 0px;
+  border: solid 2px black;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(17.5px);
+  -webkit-backdrop-filter: blur(17.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.courses {
+  background-color: #061377e1;
+  border-top: solid 2px #ffffff;
+  padding: 30px;
+}
+.courseThumbnail {
+  margin: 20px 0px;
+  border: solid 2px black;
+  max-height: 200px;
+}
+.navigation-title {
+  background-color: #ffffff;
+}
+
+.page-header {
+  font-size: 4rem;
+  text-decoration: none;
+  color: #000000;
+  border: solid 2px #0f27e4e1;
+  border-radius: 10px;
+  padding: 2px 30px;
+}
+
+.row {
+  min-height: 40px;
+  margin: 0;
+  border-radius: 2px;
+}
+
+.menuSection {
+  transition: 0.4s;
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 10px;
+  background-color: #0f27e4e1;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.menuSection:hover {
+  background-color: #ffffff;
+  padding: 15px;
+  color: #0f27e4e1;
+}
+.homeBannerContainer {
+  margin-top: 50px;
+  height: 450px;
+  background-image: url("https://aire.stanford.edu/sites/g/files/sbiybj7881/f/styles/full-width-banner/public/background_robot.jpg?itok=KiugG57t");
+  background-position: 50% 0;
+}
+
+.mBotCourseBanner {
+  margin-top: 30px;
+  height: 200px;
+  background-image: url("https://www.makeblock.com/wp-content/uploads/2018/08/mbot_1080720_banner.jpg");
+  background-position: 0 50%;
+  color: aliceblue;
+}
+
+.header-img {
+  max-width: 100px;
+}
+
+.footer {
+  margin-top: 20px;
+  border-top: solid 2px black;
+}
+
+.footer-img {
+  max-width: 200px;
+}
+
+.anyLink {
+  text-decoration: none;
+  color: inherit;
 }
