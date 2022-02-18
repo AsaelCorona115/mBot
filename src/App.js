@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/home";
 import Footer from "./components/footer";
 import CourseMainPage from "./components/courseMainPage";
+import IndividualLesson from "./components/individualLesson";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -16,8 +17,12 @@ function App() {
               <Home />
             </Route>
 
-            <Route exact path="/mBotCourse">
-              <CourseMainPage />
+            <Route path="/mBotCourse">
+              <CourseMainPage courseName="mBot" />
+            </Route>
+
+            <Route path="/mBotLessons/:key">
+              <IndividualLesson courseName="mBot" />
             </Route>
           </Switch>
         </div>

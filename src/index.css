@@ -14,8 +14,9 @@
 }
 
 .descriptionTitle {
-  margin-top: 10%;
+  margin-top: 6%;
 }
+
 .courseDescriptor {
   margin-top: 20px;
   border: solid 2px #000000;
@@ -108,4 +109,8 @@
 .anyLink {
   text-decoration: none;
   color: inherit;
+}
+
+.lessonList {
+  margin-top: 20px;
 }

@@ -41,7 +41,7 @@ const Navbar = () => {
         <div className="row align-items-center">
           {menuItems.map((item) => (
             <div className={columnClass + " menuSection"} key={item.key}>
-              <Link className="anyLink" to={item.name + "Course"}>
+              <Link className="anyLink" to={`/${item.name}Course`}>
                 {item.name}
               </Link>
             </div>
