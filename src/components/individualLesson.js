@@ -20,6 +20,7 @@ const IndividualLesson = (props) => {
         console.log(err.message);
       });
   }, []);
+  let reqKey = -1;
 
   return (
     <div className="individualLesson">
@@ -33,6 +34,101 @@ const IndividualLesson = (props) => {
               </h1>
             </div>
           </div>
+          <br />
+          <br />
+          {lessonInformation[0].lessonRequirements && (
+            <div className="row lessonReq">
+              <div className="col-12">
+                <br />
+                <h2>Requirements:</h2>
+                <br />
+                <ol className="mainText">
+                  {lessonInformation[0].lessonRequirements.map(
+                    (requirement) => {
+                      reqKey++;
+                      return <li key={reqKey}>{requirement}</li>;
+                    }
+                  )}
+                </ol>
+                <br />
+                <br />
+              </div>
+            </div>
+          )}
+
+          {lessonInformation[0].lessonAnalysis && (
+            <div className="row lessonAnalysis">
+              <div className="col-12">
+                <br />
+                <h2>Analysis</h2>
+                <br />
+                <p className="mainText">
+                  {lessonInformation[0].lessonAnalysis}
+                </p>
+                <br />
+                <br />
+              </div>
+            </div>
+          )}
+
+          {lessonInformation[0].lessonDesign && (
+            <div className="row lessonDesign">
+              <div className="col-12">
+                <br />
+                <br />
+                <h2>Design</h2>
+                <p className="mainText">
+                  Before we dive any further into the program, take a look at
+                  this:
+                </p>
+                <img
+                  className="diagramImage"
+                  src={require(`../../public/lessonFlowCharts/${lessonInformation[0].lessonDesign}`)}
+                  alt=""
+                />
+                <p className="mainText">
+                  We will check this diagram in the code along, however try to
+                  understand without the video first.
+                </p>
+
+                <br />
+                <br />
+              </div>
+            </div>
+          )}
+
+          {lessonInformation[0].codeAlong && (
+            <div className="row codeAlong">
+              <div className="col-12">
+                <br />
+                <br />
+                <h2>Code Along</h2>
+                <br />
+                <br />
+                <div className="ratio ratio-16x9">
+                  <iframe
+                    src={lessonInformation[0].codeAlong}
+                    title="YouTube video"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                <br />
+                <br />
+              </div>
+            </div>
+          )}
+          {lessonInformation[0].extras && (
+            <div className="row extras">
+              <div className="col-12">
+                <br />
+                <br />
+                <h2>Extras!</h2>
+                <br />
+                <br />
+                <p className="mainText">{lessonInformation[0].extras}</p>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
