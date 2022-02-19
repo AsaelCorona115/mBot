@@ -6,6 +6,8 @@
             "lessonTitle": "Course and Hardware Overview",
             "lessonDescription":
               "First step of every project is to know your tools. Before jumping into coding, take a look at how this course will work and your main tool, the mBot. What is is, how it works and what you'll learn",
+            "lessonAnalysis": "Although there is no necessary analysis for this lesson, make sure you check this video before tackling any lessons since we will review all the sensors that come with the mBot!",
+            "codeAlong": "https://www.youtube.com/embed/afh84WKciSc",
             "key": "1a"
           },
           {
