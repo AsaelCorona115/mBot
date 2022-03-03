@@ -21,18 +21,21 @@ const CourseMainPage = (props) => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [props.courseName]);
 
   return (
     <div className="courseMainPage">
-      <div className="container-fluid mBotCourseBanner">
+      <div
+        className="container-fluid mBotCourseBanner"
+        style={{ backgroundImage: `url("${props.courseImage}")` }}
+      >
         <div
           className="row d-flex align-items-center"
           style={{ height: "200px" }}
         >
           <div className="col-4">
             <h1 style={{ fontSize: "5rem", fontFamily: "Luminari, fantasy" }}>
-              mBot
+              {props.courseName}
             </h1>
           </div>
         </div>
@@ -43,19 +46,13 @@ const CourseMainPage = (props) => {
           <div className="col-8">
             <h1 className="descriptionTitle">Description:</h1>
             <p className="mBotCourseDescription" style={{ fontSize: "1.5rem" }}>
-              This course is intended for beginners! Have you ever used an IDE?
-              Do you know what a loop is? No? Well then this course is for you.
-              Intended for people who have never coded before, here you will
-              learn about basic programming concepts that can be applied to any
-              coding language using the mBot! An affordable and educational
-              robot that can be programmed using Scratch. Take you first steps
-              to becoming a programmer!
+              {props.description}
             </p>
           </div>
 
           <div className="col-4">
             <img
-              src="https://www.lifewire.com/thmb/4w7aNRiK7sYO7jfMO2jTNhcTeK8=/1500x1500/filters:no_upscale()/_hero_SQ_3LW4149488-1-4313fb506d5641ba9f814f50f9047e9c.jpg"
+              src={props.courseThumbnail}
               alt="mBot thumbnail"
               className="img-fluid p-5"
             />
@@ -102,7 +99,7 @@ const CourseMainPage = (props) => {
                           <br />
                           <Link
                             className="anyLink"
-                            to={`/${lesson.course}lessons/${lesson.key}`}
+                            to={`/${lesson.course}Lessons/${lesson.key}`}
                           >
                             <button
                               type="button"
