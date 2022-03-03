@@ -1,4 +1,5 @@
 {
+
     "mBotLessons":[
         { 
             "course" : "mBot",
@@ -6,7 +7,7 @@
             "lessonTitle": "Course and Hardware Overview",
             "lessonDescription":
               "First step of every project is to know your tools. Before jumping into coding, take a look at how this course will work and your main tool, the mBot. What is is, how it works and what you'll learn",
-            "lessonAnalysis": "Although there is no necessary analysis for this lesson, make sure you check this video before tackling any lessons since we will review all the sensors that come with the mBot!",
+            "lessonRequirements": [],
             "codeAlong": "https://www.youtube.com/embed/afh84WKciSc",
             "key": "1a"
           },
@@ -16,6 +17,7 @@
             "lessonTitle": "Software Overview",
             "lessonDescription":
               "Now that you know the mBot and its sensors let's take a look at  your software tools. There are many ways to interact with the mBot!",
+            "lessonRequirements": [],
             "key": "1b"
           },
           {
@@ -24,11 +26,12 @@
             "lessonTitle": "Blinking Lights",
             "lessonDescription":
               "This will be your first mBot program! Teach the mBot to use its integrated LED lights, all while learning about loops and conditionals. Let's get with the coding!",
-            "lessonRequirements": ["The program will alternate blinking each LED",  "The program shall be continuous",  "Each LED will be turned on for one second","One LED will be red, while the other one will be blue."],
+            "lessonObjectives": ["The program will alternate blinking each LED",  "The program shall be continuous",  "Each LED will be turned on for one second","One LED will be red, while the other one will be blue."],
+            "lessonRequirements": ["led", "ultrasonic"],
             "lessonAnalysis": "There are not many requirements for this program. However keep in mind two important things: we have to find a way to make this program continuous, only one light should be on and specify the color that each light will be. During the process of building this program you'll take a first look to loops, RGB, and how to interact with the mBot",
             "lessonDesign": "blinking_lights.png",
             "codeAlong": "https://www.youtube.com/embed/YS35VHsbS-0",
-            "extras": "Check the following video for to see how to assemble the mBot step by step: https://www.youtube.com/watch?v=B7rg-vkENSI ",
+            "lessonFiles":["blinking_lights_code_image.png"],
             "key": "1c"
             
           },
@@ -38,6 +41,7 @@
             "lessonTitle": "Jazzy mBot",
             "lessonDescription":
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "lessonRequirements": [],
             "key": "1d"
           },
           {
@@ -45,7 +49,8 @@
             "lessonNumber": "5",
             "lessonTitle": "mRgency Bot",
             "lessonDescription":
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+              "Tacos",
+            "lessonRequirements": [],
             "key": "1e"
           },
           {
@@ -54,6 +59,7 @@
             "lessonTitle": "Line Follower",
             "lessonDescription":
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "lessonRequirements": [],
             "key": "1f"
           },
           {
@@ -62,6 +68,7 @@
             "lessonTitle": "Avoit it",
             "lessonDescription":
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "lessonRequirements": [],
             "key": "1g"
           },
           {
@@ -70,6 +77,7 @@
             "lessonTitle": "Traffic Simulation",
             "lessonDescription":
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "lessonRequirements": [],
             "key": "1h"
           },
           {
@@ -78,6 +86,7 @@
             "lessonTitle": "Self Parking",
             "lessonDescription":
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "lessonRequirements": [],
             "key": "1i"
           },
           {
@@ -86,7 +95,13 @@
             "lessonTitle": "mAze Solver",
             "lessonDescription":
               "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "lessonRequirements": [],
             "key": "1j"
           }
-    ]
+    ],
+  "AutomationLessons":[
+    {
+      
+    }
+  ]  
 }

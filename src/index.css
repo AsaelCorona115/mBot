@@ -115,22 +115,20 @@
   margin-top: 20px;
 }
 
-.lessonReq,
-.lessonAnalysis,
-.lessonDesign,
-.codeAlong,
-.extras {
-  border-top: solid 2px black;
-}
-
-.mainText {
-  font-size: 1.5rem;
-}
-
 li {
   text-align: left;
 }
 
 .diagramImage {
   min-height: 800px;
+}
+
+.lessonHeader {
+  background-color: #0f27e4e1;
+  color: aliceblue;
+}
+
+.img-thumbnail {
+  max-width: 300px;
+  margin-right: 50px;
 }
