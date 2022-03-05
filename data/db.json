@@ -15,11 +15,16 @@
     "course" : "mBot",
     "lessonNumber": "2",
     "lessonTitle": "Software Overview",
+    "lessonPresentation": "For this lesson let's review the software tools that would be used during this project including: mBlock, Arudino Mode, Arduino C. In this section of the project we would give a brief introduction to Scratch as a language, why it is easy to use and the different types of blocks that can be used in it to program different things. Here we would explain how to install mBlock, what version, from where and how to install it. We would include an introduction to the different type of blocks available in Scratch that are compatible with the mBot. However, the individual blocks explanation wouldn't go much into detail since each block would be better understood if its use is explained at the moment of using it, that way new users can see its practical application rather than only theoretical. Additionally, explaining what is Arduino mode and why it is useful would be included in this section of the project. Lastly, this section of the course would include how to connect your mBot to your computer and how to restore it to its original firmware if you wish to connect it to your cellphone. ",
     "lessonDescription":
       "Now that you know the mBot and its sensors let's take a look at  your software tools. There are many ways to interact with the mBot!",
     "lessonRequirements": [],
+    "lessonAnalysis": "", 
+    "lessonDesign": "", 
+    "codeAlong": "https://www.youtube.com/embed/tu59pFD50sQ", 
     "key": "1b"
   },
+  
   {
     "course" : "mBot",
     "lessonNumber": "3",
@@ -28,20 +33,26 @@
       "This will be your first mBot program! Teach the mBot to use its integrated LED lights, all while learning about loops and conditionals. Let's get with the coding!",
     "lessonPresentation" : "In this first coding lesson, we will create our first program for the mBot and learn how to interact with its components. The coding section is not too complicated but it is useful to show the first blocks in Scratch used to create a program, communicate with the mBot components and upload the program to the mBot using Arduino Mode. While doing this lesson we'll learn the first steps to create an mBot program and how to interact with the LED lights of the mBot. ",
     "lessonObjectives": ["The program will alternate blinking each LED",  "The program shall be continuous",  "Each LED will be turned on for one second","One LED will be red, while the other one will be blue."],
-    "lessonRequirements": ["led", "ultrasonic"],
+    "lessonRequirements": ["led"],
     "lessonAnalysis": "There are not many requirements for this program. However keep in mind two important things: we have to find a way to make this program continuous, only one light should be on and specify the color that each light will be. During the process of building this program you'll take a first look to loops, RGB, and how to interact with the mBot",
     "lessonDesign": "blinking_lights.png",
-    "codeAlong": "https://www.youtube.com/embed/YS35VHsbS-0",
+    "codeAlong": "https://www.youtube.com/embed/8NBlibJKG7c",
     "lessonFiles":["blinking_lights_code_image.png"],
     "key": "1c"
   },
   {
     "course" : "mBot",
     "lessonNumber": "4",
-    "lessonTitle": "Jazzy mBot",
+    "lessonTitle": "Jazzy Bot",
     "lessonDescription":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "lessonRequirements": [],
+      "Now that you know about the LED lights, let's talk about the speakers. Time to make some music",
+    "lessonPresentation": "Now that we have learned how to use the LED lights, we are going to interact with another component of the mBot: the built-in-speaker. In this lesson we will learn how to use the built-in-speaker of the mBot to play one of the most famous jazz phrases of all time: 'the lick'. While doing this lesson we'll learn about sound frequencies, how to interact with the built-in-speaker and a little bit of music.",
+    "lessonObjectives": ["Use the built-in-speaker of the mBot to play 'the lick' "],
+    "lessonRequirements": ["speaker"],
+    "lessonAnalysis":"This lesson requires more than just learning about robotics. We will learn a little bit about music (the melody we'll play) and physics (note frequencies) as well. Make sure you watch the video for the diagrams of the music and the notes frequencies. However, don't worry if you don't know how to read music. The important thing is that you learn how to program the robot to use its speakers. The mBot can play notes from D0 to B8. If at the end of this program you'd like to challenge yourself try to play your own melody!",
+    "lessonDesign":"Jazzy_bot_flowchart.png",
+    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "lessonFiles": ["jazzy_bot_code.png"],
     "key": "1d"
   },
   {
