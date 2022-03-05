@@ -26,6 +26,7 @@
     "lessonTitle": "Blinking Lights",
     "lessonDescription":
       "This will be your first mBot program! Teach the mBot to use its integrated LED lights, all while learning about loops and conditionals. Let's get with the coding!",
+    "lessonPresentation" : "In this first coding lesson, we will create our first program for the mBot and learn how to interact with its components. The coding section is not too complicated but it is useful to show the first blocks in Scratch used to create a program, communicate with the mBot components and upload the program to the mBot using Arduino Mode. While doing this lesson we'll learn the first steps to create an mBot program and how to interact with the LED lights of the mBot. ",
     "lessonObjectives": ["The program will alternate blinking each LED",  "The program shall be continuous",  "Each LED will be turned on for one second","One LED will be red, while the other one will be blue."],
     "lessonRequirements": ["led", "ultrasonic"],
     "lessonAnalysis": "There are not many requirements for this program. However keep in mind two important things: we have to find a way to make this program continuous, only one light should be on and specify the color that each light will be. During the process of building this program you'll take a first look to loops, RGB, and how to interact with the mBot",
