@@ -18,9 +18,9 @@
 }
 
 .courseDescriptor {
-  margin-top: 20px;
-  border: solid 2px #000000;
+  color: aliceblue;
 }
+
 .courseCard {
   margin: 20px 0px;
   border: solid 2px black;
@@ -34,55 +34,22 @@
 }
 
 .courses {
-  background-color: #061377e1;
+  background-color: #061377;
   border-top: solid 2px #ffffff;
   padding: 30px;
+  margin-top: 100px;
 }
+
 .courseThumbnail {
   margin: 20px 0px;
   border: solid 2px black;
   max-height: 200px;
-}
-.navigation-title {
-  background-color: #ffffff;
-}
-
-.page-header {
-  font-size: 4rem;
-  text-decoration: none;
-  color: #000000;
-  border: solid 2px #0f27e4e1;
-  border-radius: 10px;
-  padding: 2px 30px;
 }
 
 .row {
   min-height: 40px;
   margin: 0;
   border-radius: 2px;
-}
-
-.menuSection {
-  transition: 0.4s;
-  color: #ffffff;
-  font-size: 1.5rem;
-  text-decoration: none;
-  padding: 10px;
-  background-color: #0f27e4e1;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.menuSection:hover {
-  background-color: #ffffff;
-  padding: 15px;
-  color: #0f27e4e1;
-}
-.homeBannerContainer {
-  margin-top: 50px;
-  height: 450px;
-  background-image: url("https://aire.stanford.edu/sites/g/files/sbiybj7881/f/styles/full-width-banner/public/background_robot.jpg?itok=KiugG57t");
-  background-position: 50% 0;
 }
 
 .mBotCourseBanner {
@@ -97,7 +64,7 @@
 }
 
 .footer {
-  margin-top: 20px;
+  margin-top: 80px;
   border-top: solid 2px black;
 }
 
@@ -136,4 +103,38 @@ li {
 
 .codeResult {
   width: 40%;
+}
+
+.navbarBackground {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+.mainPageBackground {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  max-height: 700px;
+}
+
+.mainNavigationLink:link,
+.mainNavigationLink:visited {
+  color: aliceblue;
+  font-size: 2rem;
+}
+
+.mainNavigationLink:hover {
+  padding: 10px;
+  text-decoration: underline;
+}
+
+.logo {
+  background-color: transparent;
+  border: none;
+  max-height: 150px;
 }

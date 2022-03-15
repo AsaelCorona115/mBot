@@ -25,42 +25,23 @@ const CourseMainPage = (props) => {
 
   return (
     <div className="courseMainPage">
-      <div
-        className="container-fluid mBotCourseBanner"
-        style={{ backgroundImage: `url("${props.courseImage}")` }}
-      >
-        <div
-          className="row d-flex align-items-center"
-          style={{ height: "200px" }}
-        >
-          <div className="col-4">
-            <h1 style={{ fontSize: "5rem", fontFamily: "Luminari, fantasy" }}>
-              {props.courseName}
-            </h1>
-          </div>
-        </div>
-      </div>
+      <img
+        src={props.courseImage}
+        alt="NavbarBackground"
+        className="mainPageBackground"
+      />
 
       <div className="courseDescriptor container">
         <div className="row">
-          <div className="col-8">
-            <h1 className="descriptionTitle">Description:</h1>
-            <p className="mBotCourseDescription" style={{ fontSize: "1.5rem" }}>
-              {props.description}
-            </p>
-          </div>
-
-          <div className="col-4">
-            <img
-              src={props.courseThumbnail}
-              alt="mBot thumbnail"
-              className="img-fluid p-5"
-            />
+          <div className="col-6 text-start">
+            <h1 className="descriptionTitle">About this course: </h1>
+            <p className="fs-4">{props.description}</p>
           </div>
         </div>
       </div>
 
       <div className="lessonList container">
+        <h1 className="courseDescriptor">Lesson List</h1>
         <div className="row">
           <div className="col-12">
             <div
@@ -76,7 +57,7 @@ const CourseMainPage = (props) => {
                         id={`flush-heading${lesson.key}`}
                       >
                         <button
-                          className="accordion-button collapsed"
+                          className="accordion-button collapsed fs-4 fw-bold"
                           type="button"
                           data-bs-toggle="collapse"
                           data-bs-target={`#flush-collapse${lesson.key}`}
@@ -93,7 +74,7 @@ const CourseMainPage = (props) => {
                         aria-labelledby={`flush-heading${lesson.key}`}
                         data-bs-parent="#accordionFlushExample"
                       >
-                        <div className="accordion-body">
+                        <div className="accordion-body fs-4">
                           {lesson.lessonDescription}
                           <br />
                           <br />

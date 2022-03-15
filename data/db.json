@@ -60,32 +60,52 @@
     "lessonNumber": "5",
     "lessonTitle": "mRgency Bot",
     "lessonDescription":
-      "Tacos",
-    "lessonRequirements": [],
+      "With the LEDs and the speakers in your pocket, is time to tackle on your first sensor: the light sensor. Lights out. Call the mRgency bot!",
+    "lessonPresentation":"Now that we are starting to get familiar with the mBot and how to communicate with it to tell it how to use its built-in-speaker and LED lights, we are going to use a new component of the mBot and our first sensor: the light sensor. Using the light sensor to detect how the levels of light at a certain moment, we are going to program the mBot to turn on its lights and make sounds, an emergency mBot! While doing this lesson, we'll learn about conditionals,for loops, means, how to read information from a sensor and how to use that information in our programs. ",
+    "lessonObjectives": ["Measure the available light", "Make a sound when the current light level drops 20%  below the normal light level", "The program will alternate blinking each LED in red and blue","Turn off the sound when the light level rises above the low-light threshold.", "Turn off the LED lights when the light level rises above the low-light threshold."],
+    "lessonRequirements": ["speaker", "led", "light_sensor"],
+    "lessonAnalysis":"The mBot has a light sensor on top of its circuit board that can be used to measure the level of light available around the robot. It returns a value in the range of 0-1024. However, these levels vary depending on the moment and room. For this reason, before we use the readings from the sensor, we have to calculate the mean of the readings. To do this, we are going to take 10 measurements of the light level each second and calculate its mean to determine the mean level of light. If the light varies from that level, then will tell the mBot to turn on its lights and make sound to work as a blackout alarm. ",
+    "lessonDesign":"mErgencyBot_Flowchart.png",
+    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "lessonFiles": ["mErgency_code.png"],
     "key": "1e"
   },
   {
     "course" : "mBot",
     "lessonNumber": "6",
-    "lessonTitle": "Line Follower",
+    "lessonTitle": "Jazzy mBot 2, the comeback",
     "lessonDescription":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "lessonRequirements": [],
+      "One sensor down and on with the next one! After teaching the mBot how to play 'the lick' its dream of becoming a musician has increased and now it wants to try improvising a little bit using the built-in-speaker and changing what it plays based on how far an object is using a new sensor: the ultrasonic sensor.  ",
+    "lessonPresentation":"Now that we have dominated a few components and sensors is time to start teaching the mBot how to move. One of the most useful components to teach the mBot to move in a certain way is to use the line follower module included at the bottom which detects if the mBot is on top of a line, or if it has gone left or right. In this lesson new programmers will use multiple conditionals for the first time, and practicing their skills involving loops.",
+    "lessonObjectives": ["The mBot shall detect a path marked by a dark line.", "The mBot shall move forward along the path.", "The mBot shall turn as needed to stay on the path."
+      ,"The mBot shall execute a strategy to find the path if it strays off of the path."],
+    "lessonRequirements": ["line_follower"],
+    "lessonAnalysis":"The way the line follower works is by detecting differences in light intensity between the path to follow and the rest of the surface. Ideally, the path and the surface will have a lot of contrast to make it easier for the line-follower sensor to detect. In the mBot the line-follower sensor has two pairs of sensors that emit and receive infrared light. This design makes it easy to detect if the mBot is on the path or if it is going off it. Make sure you watch the video to see the table that includes the values obtained from the two pairs of sensors. Using these values, it is easy to determine if the mBot needs to turn left or right in order to stay on the line: if both sensors are on the line move forward (value 0); if the right sensor is off (value 1), turn left slightly; if the left sensor is off, turn right (value 2). Nevertheless we will have to come up with a strategy for the mBot to find the path if both sensors are off. In this case we will program the mBot to back up until it finds its path again. ",
+    "lessonDesign":"lineFollower_flowchart.png",
+    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "lessonFiles": ["line_follower.png"],
     "key": "1f"
   },
   {
     "course" : "mBot",
     "lessonNumber": "7",
-    "lessonTitle": "Avoit it",
+    "lessonTitle": "Follow the line",
     "lessonDescription":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "lessonRequirements": [],
+      "One sensor down, and on to the next one. We will use for the first time the line follower sensor, which will help us program the mBot to move for the first time using a line! Get your motors ready!",
+    "lessonPresentation":"Now that we have dominated a few components and sensors is time to start teaching the mBot how to move. One of the most useful components to teach the mBot to move in a certain way is to use the line follower module included at the bottom which detects if the mBot is on top of a line, or if it has gone left or right. In this lesson new programmers will use multiple conditionals for the first time, and practicing their skills involving loops.",
+    "lessonObjectives": ["The mBot shall detect a path marked by a dark line.", "The mBot shall move forward along the path.", "The mBot shall turn as needed to stay on the path."
+      ,"The mBot shall execute a strategy to find the path if it strays off of the path."],
+    "lessonRequirements": ["line_follower"],
+    "lessonAnalysis":"The way the line follower works is by detecting differences in light intensity between the path to follow and the rest of the surface. Ideally, the path and the surface will have a lot of contrast to make it easier for the line-follower sensor to detect. In the mBot the line-follower sensor has two pairs of sensors that emit and receive infrared light. This design makes it easy to detect if the mBot is on the path or if it is going off it. Make sure you watch the video to see the table that includes the values obtained from the two pairs of sensors. Using these values, it is easy to determine if the mBot needs to turn left or right in order to stay on the line: if both sensors are on the line move forward (value 0); if the right sensor is off (value 1), turn left slightly; if the left sensor is off, turn right (value 2). Nevertheless we will have to come up with a strategy for the mBot to find the path if both sensors are off. In this case we will program the mBot to back up until it finds its path again. ",
+    "lessonDesign":"lineFollower_flowchart.png",
+    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "lessonFiles": ["line_follower.png"],
     "key": "1g"
   },
   {
     "course" : "mBot",
     "lessonNumber": "8",
-    "lessonTitle": "Traffic Simulation",
+    "lessonTitle": "Avoid it",
     "lessonDescription":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "lessonRequirements": [],
@@ -94,7 +114,7 @@
   {
     "course" : "mBot",
     "lessonNumber": "9",
-    "lessonTitle": "Self Parking",
+    "lessonTitle": "Traffic Simulation",
     "lessonDescription":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "lessonRequirements": [],
@@ -103,11 +123,20 @@
   {
     "course" : "mBot",
     "lessonNumber": "10",
-    "lessonTitle": "mAze Solver",
+    "lessonTitle": "Self Parking",
     "lessonDescription":
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "lessonRequirements": [],
     "key": "1j"
+  },
+  {
+    "course" : "mBot",
+    "lessonNumber": "11",
+    "lessonTitle": "mAze Solver",
+    "lessonDescription":
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "lessonRequirements": [],
+    "key": "1k"
   }
 ],
 "AutomationLessons":[

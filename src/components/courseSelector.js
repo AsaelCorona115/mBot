@@ -32,13 +32,8 @@ const CourseSelector = () => {
   return (
     <div className="container courseSelectorContainer">
       <div className="row courseSelectorTitle">
-        <div
-          className="col-12"
-          style={{ backgroundColor: "#061377e1", color: "aliceblue" }}
-        >
-          <h1 style={{ padding: "10px 0px", textDecoration: "underline" }}>
-            Courses
-          </h1>
+        <div className="col-12" style={{ color: "aliceblue" }}>
+          <h1 className="fs-1">Welcome to SCSU Robotics!</h1>
         </div>
       </div>
 
