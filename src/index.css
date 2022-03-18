@@ -87,13 +87,9 @@ li {
   text-align: left;
 }
 
-.diagramImage {
+.diagramImage,
+.codeImage {
   min-height: 800px;
-}
-
-.lessonHeader {
-  background-color: #0f27e4e1;
-  color: aliceblue;
 }
 
 .img-thumbnail {
@@ -120,6 +116,16 @@ li {
   left: 0px;
   top: 0px;
   max-height: 700px;
+}
+
+.LessonBackground {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  max-height: 180px;
+  background-color: #061377;
 }
 
 .mainNavigationLink:link,

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 const IndividualLesson = (props) => {
   const [lessonInformation, setLessonInformation] = useState(null);
   const { key } = useParams();
+  let counter = 1;
 
   useEffect(() => {
     fetch(`http://localhost:8000/${props.courseName}Lessons?key=${key}`)
@@ -26,9 +27,15 @@ const IndividualLesson = (props) => {
     <div className="individualLesson">
       {lessonInformation && (
         <div className="container-fluid mt-5 lessonContainer">
+          <img
+            src={lessonInformation[0].background}
+            alt="LessonBackground"
+            className="LessonBackground"
+          />
+
           <div className="row">
             {/* Lesson Header */}
-            <div className="col-12 d-flex lessonHeader">
+            <div className="col-12 lessonHeader">
               <h1 className="display-1 fw-bolder">
                 Lesson Number {lessonInformation[0].lessonNumber} :{" "}
                 {lessonInformation[0].lessonTitle}
@@ -36,205 +43,119 @@ const IndividualLesson = (props) => {
             </div>
           </div>
 
-          {/* Main content row */}
-          <div className="row">
-            {/* First Column, second on smaller devices */}
-            <div className="col-lg-12 col-xl-6 order-lg-2">
-              {/* Nested Container */}
-              <div className="container-fluid">
-                {/* Code Along Video */}
-                <div className="row">
-                  <div className="col-12">
-                    {lessonInformation[0].codeAlong ? (
-                      <>
-                        <br />
-                        <h1>Code Along</h1>
-                        <br />
-                        <div className="ratio ratio-16x9">
-                          <iframe
-                            src={lessonInformation[0].codeAlong}
-                            title="YouTube video"
-                            allowFullScreen
-                          ></iframe>
-                        </div>
-                        <br />
-                        <br />
-                      </>
-                    ) : (
-                      <>
-                        <p className="fs-4">There's no code along :(</p>
-                      </>
-                    )}
-                  </div>
-                </div>
-                {/* Objectives Row */}
-                <div className="row">
-                  <div className="col-12">
-                    {lessonInformation[0].lessonObjectives ? (
-                      <>
-                        <h1>Objectives: </h1>
-                        <ol className="mainText">
-                          {lessonInformation[0].lessonObjectives.map(
-                            (objective) => {
-                              objKey++;
-                              return (
-                                <li className="fs-3" key={objKey}>
-                                  {objective}
-                                </li>
-                              );
-                            }
-                          )}
-                        </ol>
-                      </>
-                    ) : (
-                      <>
-                        <h1>Objectives: </h1>
-                        <p className="fs-3">
-                          There are no objectives for this lesson ;)
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
-
-                {/* Requirements Row */}
-                <div className="row">
-                  <div className="col-12">
-                    <br />
-                    <h2>Requirements:</h2>
-                    <br />
-
-                    {lessonInformation[0].lessonRequirements.length != 0 ? (
-                      lessonInformation[0].lessonRequirements.map((item) => {
-                        objKey++;
-                        return (
-                          <img
-                            key={objKey}
-                            src={require(`../../public/mBotComponents/${item}.png`)}
-                            className="img-thumbnail img-fluid rounded-circle border-dark"
-                            alt={item}
-                          />
-                        );
-                      })
-                    ) : (
-                      <p className="fs-4">
-                        No components are used in this lesson
-                      </p>
-                    )}
-                  </div>
-                </div>
+          {lessonInformation[0].lessonPresentation && (
+            <div className="row mt-5">
+              <div className="col-2 display-5 mt-5">Presentation: </div>
+              <div className="col-10 text-start mt-5">
+                <p className="fs-3 mt-5">
+                  {lessonInformation[0].lessonPresentation}
+                </p>
               </div>
-
-              <br />
-              <br />
             </div>
-            {/* Second Column, first on smaller devices  */}
-            <div className="col-lg-12 col-xl-6 order-lg-1">
-              {/* Second nested container */}
-              <div className="container-fluid">
-                {/* Presentation Row */}
-                <div className="row">
-                  <div className="col-12">
-                    <br />
-                    <h1>Presentation: </h1>
-                    <br />
-                    {lessonInformation[0].lessonPresentation ? (
-                      <p className="fs-3">
-                        {lessonInformation[0].lessonPresentation}
-                      </p>
-                    ) : (
-                      <>
-                        <p className="fs-3">
-                          There's no analysis required for this lesson, is
-                          simple!
-                        </p>
-                      </>
-                    )}
-                  </div>
-                </div>
+          )}
 
-                {/* Analysis Row */}
-                <div className="row">
-                  <div className="col-12">
-                    <br />
-                    <h2>Analysis</h2>
-                    <br />
+          {lessonInformation[0].lessonRequirements.length != 0 && (
+            <div className="row mt-5">
+              <div className="col-2 display-5 mt-5">Requirements: </div>
+              <div className="col-10 text-center">
+                {lessonInformation[0].lessonRequirements.map((item) => {
+                  objKey++;
+                  return (
+                    <img
+                      key={objKey}
+                      src={require(`../../public/mBotComponents/${item}.png`)}
+                      className="img-thumbnail img-fluid rounded-circle border-dark"
+                      alt={item}
+                    />
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
-                    {lessonInformation[0].lessonAnalysis ? (
-                      <p className="fs-3">
-                        {lessonInformation[0].lessonAnalysis}
-                      </p>
-                    ) : (
-                      <p className="fs-3">
-                        There's no analysis required for this lesson, is simple!
-                      </p>
-                    )}
-                  </div>
-                </div>
+          {lessonInformation[0].lessonObjectives && (
+            <div className="row mt-5">
+              <div className="col-2 display-5 mt-5 ">Objetives: </div>
+              <div className="col-10 text-start">
+                <ol className="mainText">
+                  {lessonInformation[0].lessonObjectives.map((objective) => {
+                    objKey++;
+                    return (
+                      <li className="fs-3" key={objKey}>
+                        {objective}
+                      </li>
+                    );
+                  })}
+                </ol>
+              </div>
+            </div>
+          )}
 
-                {/* Design Row */}
-                <div className="row">
-                  <div className="class-12">
-                    {lessonInformation[0].lessonDesign ? (
-                      <>
-                        <br />
-                        <br />
-                        <h2>Design</h2>
-                        <p className="fs-4">
-                          Before we dive any further into the program, take a
-                          look at this:
-                        </p>
-                        <img
-                          className="diagramImage"
-                          src={require(`../../public/lessonFlowCharts/${lessonInformation[0].lessonDesign}`)}
-                          alt=""
-                        />
-                        <p className="fs-4">
-                          We will check this diagram in the code along, however
-                          try to understand without the video first.
-                        </p>
-                        <br />
-                        <br />
-                      </>
-                    ) : (
-                      <>
-                        <h2>Design</h2>
-                        <p className="fs-4">
-                          There's no design involved in this section. Whew!
-                        </p>
-                      </>
-                    )}
-                  </div>
+          {lessonInformation[0].lessonAnalysis && (
+            <div className="row mt-5">
+              <div className="col-2 display-5 mt-5 ">Analysis: </div>
+              <div className="col-10 text-start">
+                <p className="fs-3">{lessonInformation[0].lessonAnalysis}</p>
+              </div>
+            </div>
+          )}
+
+          {lessonInformation[0].lessonDesign && (
+            <div className="row">
+              <div className="col-2 display-5 mt-5">Design: </div>
+              <div className="col-10 mt-5">
+                <p className="fs-4 mt-5">
+                  Before we dive any further into the program, plan ahead!
+                </p>
+                <img
+                  className="diagramImage"
+                  src={require(`../../public/lessonFlowCharts/${lessonInformation[0].lessonDesign}`)}
+                  alt=""
+                />
+                <p className="fs-4">
+                  We will check this diagram in the code along, however try to
+                  understand without the video first.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {lessonInformation[0].codeAlong && (
+            <div className="row mt-5">
+              <div className="col-2 display-5 mt-5 ">Code Along: </div>
+              <div className="col-10 mt-5 text-start">
+                <div className="ratio ratio-16x9 mt-5">
+                  <iframe
+                    src={lessonInformation[0].codeAlong}
+                    title="YouTube video"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
           {lessonInformation[0].lessonFiles && (
-            <div className="row ">
-              <div className="col-12">
-                <br />
-                <br />
-                <h2>Result</h2>
-                <br />
-                <br />
-                <p className="fs-4">
+            <div className="row mt-5">
+              <div className="col-2 display-5 mt-5 ">Code: </div>
+              <div className="col-10 mt-5 text-center">
+                <p className="fs-4 mt-5">
                   If you are having problems building the program, you can take
                   a look at what is supposed to look like, but try to build it
                   yourself before looking!
                 </p>
-                <br />
-                <br />
-                <img
-                  src={require(`../../public/lessonCodeImages/${lessonInformation[0].lessonFiles[0]}`)}
-                  className="img codeResult"
-                  alt={lessonInformation[0].lessonFiles[0]}
-                />
-
-                <br />
-                <br />
-
-                <p className="fs-4">
+                {lessonInformation[0].lessonFiles.map((item) => {
+                  objKey++;
+                  return (
+                    <img
+                      key={objKey}
+                      src={require(`../../public/lessonCodeImages/${item}`)}
+                      className="codeImage"
+                      alt={item}
+                    />
+                  );
+                })}
+                <p className="fs-4 text-center">
                   Download it
                   <a
                     href="https://github.com/AsaelCorona115/mBotPrograms"
@@ -243,19 +164,6 @@ const IndividualLesson = (props) => {
                     here!
                   </a>
                 </p>
-              </div>
-            </div>
-          )}
-
-          {lessonInformation[0].extras && (
-            <div className="row extras">
-              <div className="col-12">
-                <br />
-                <br />
-                <h2>Extras!</h2>
-                <br />
-                <br />
-                <p className="fs-4">{lessonInformation[0].extras}</p>
               </div>
             </div>
           )}

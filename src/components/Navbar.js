@@ -18,14 +18,14 @@ const Navbar = () => {
             <div className="container-fluid">
               <div className="row">
                 <div className="col-4 mt-5">
-                  <Link className="anyLink mainNavigationLink" to="mBotCourse">
+                  <Link className="anyLink mainNavigationLink" to="/mBotCourse">
                     mBot
                   </Link>
                 </div>
                 <div className="col-4 mt-5">
                   <Link
                     className="anyLink mainNavigationLink"
-                    to="MatLabCourse"
+                    to="/MatLabCourse"
                   >
                     MatLab
                   </Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
                 <div className="col-4 mt-5">
                   <Link
                     className="anyLink mainNavigationLink"
-                    to="AutomationCourse"
+                    to="/AutomationCourse"
                   >
                     Automation
                   </Link>
