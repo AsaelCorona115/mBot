@@ -71,7 +71,7 @@
     "lessonRequirements": ["speaker", "led", "light_sensor"],
     "lessonAnalysis":"The mBot has a light sensor on top of its circuit board that can be used to measure the level of light available around the robot. It returns a value in the range of 0-1024. However, these levels vary depending on the moment and room. For this reason, before we use the readings from the sensor, we have to calculate the mean of the readings. To do this, we are going to take 10 measurements of the light level each second and calculate its mean to determine the mean level of light. If the light varies from that level, then will tell the mBot to turn on its lights and make sound to work as a blackout alarm. ",
     "lessonDesign":"mErgencyBot_Flowchart.png",
-    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "codeAlong":"https://www.youtube.com/embed/QISGMVtna-4",
     "lessonFiles": ["mErgency_code.png"],
     "key": "1e"
   },
@@ -79,17 +79,16 @@
     "background": "https://color-hex.org/colors/061377.png",
     "course" : "mBot",
     "lessonNumber": "6",
-    "lessonTitle": "Jazzy mBot 2, the comeback",
+    "lessonTitle": "JazzyBot, the comeback",
     "lessonDescription":
-      "One sensor down and on with the next one! After teaching the mBot how to play 'the lick' its dream of becoming a musician has increased and now it wants to try improvising a little bit using the built-in-speaker and changing what it plays based on how far an object is using a new sensor: the ultrasonic sensor.  ",
-    "lessonPresentation":"Now that we have dominated a few components and sensors is time to start teaching the mBot how to move. One of the most useful components to teach the mBot to move in a certain way is to use the line follower module included at the bottom which detects if the mBot is on top of a line, or if it has gone left or right. In this lesson new programmers will use multiple conditionals for the first time, and practicing their skills involving loops.",
-    "lessonObjectives": ["The mBot shall detect a path marked by a dark line.", "The mBot shall move forward along the path.", "The mBot shall turn as needed to stay on the path."
-      ,"The mBot shall execute a strategy to find the path if it strays off of the path."],
-    "lessonRequirements": ["line_follower"],
-    "lessonAnalysis":"The way the line follower works is by detecting differences in light intensity between the path to follow and the rest of the surface. Ideally, the path and the surface will have a lot of contrast to make it easier for the line-follower sensor to detect. In the mBot the line-follower sensor has two pairs of sensors that emit and receive infrared light. This design makes it easy to detect if the mBot is on the path or if it is going off it. Make sure you watch the video to see the table that includes the values obtained from the two pairs of sensors. Using these values, it is easy to determine if the mBot needs to turn left or right in order to stay on the line: if both sensors are on the line move forward (value 0); if the right sensor is off (value 1), turn left slightly; if the left sensor is off, turn right (value 2). Nevertheless we will have to come up with a strategy for the mBot to find the path if both sensors are off. In this case we will program the mBot to back up until it finds its path again. ",
-    "lessonDesign":"lineFollower_flowchart.png",
-    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
-    "lessonFiles": ["jazzy_bot_comeback.png"],
+      "One sensor down and on with the next one! After teaching the mBot how to play 'the lick', it kept dreaming about becoming a musician and now it wants to improvise a little bit using its only instrumen: the built-in-speaker. However, to be able to play changing notes and changing what it plays, we will create an instrument called a Theremin, which changes the tone it plays based on how far an object is using a new sensor: the ultrasonic sensor.  ",
+    "lessonPresentation":"After learning how to use our first sensor and use it to detect the light levels, it is time to learn about the ultrasonic sensor. The ultrasonic sensor is one of the most useful sensors that is integrated in the mBot and we are going to use it a lot in our next programs since it allows us to detect if there are any objects in front of the mBot and even how far they are. The ultrasonic sensor is the part of the mBot at the front that looks like eyes, it works similar as a SONAR by sending an ultrasonic signal from one eye and receiving it on the other. Although humans can't hear it, the mBot calculates the time it takes to receive the echo an uses this information to calculate the distance from the object ahead in centimeters. In this lesson we will use the ultrasonic sensor together with the integrated speakers to program a Theremin, an instrument that tells the mBot to play a tone that changes depending on the distance from an object ahead. ",
+    "lessonObjectives": ["The mBot shall play a tone when it detects something within a range of 15-50cm", "If the object is out of range, (less than 15 cm or more than 50) the mBot will stop playing a tune", "The mBot will play a range of an octave based on equal spacing over the 15-50cm range", "Highest note will be played at 15 cm and lowest at 50"],
+    "lessonRequirements": ["ultrasonic"],
+    "lessonAnalysis":"Our first step to build the Theremin will be to determine the interval values that we will use to change the note values. The 15 cm mark will be the lower bound to trigger the highest note, for the lowest note we will use the 50cm mark and adding a 6-10 cm cushion to make sure it gets played. First we will normalize the range by subtracting the lowest end from the high end (50-15 = 35). Then, to index the notes we will be playing we will use the modulo operator which returns the remainder of a division. We do the following to index the notes our program will play: Subtract the minimum value from the range to scale the range down to the values we are interested in Use the mod operator to get the remainder from dividing the range by the number of intervals.  Subtract the remainder from the range Perform the division to get the index. For instance: we begin knowing that our range is 15-50cm. If we want to be able to play 7 notes (50 -15 = 35, 35/7 = 5) each note would have a 5 cm interval. If the sensor returns a value of 15.72cm, we can subtract the result of the MOD operator to convert the original range into an integer value (15.72 - (15.72MOD5) = 15.72-0.72 = 15). Lastly, by dividing this number by 5 we can calculate a value that represents our note ( 15/5 = 3 which would translate to an E4)",
+    "lessonDesign":"theremin_flowchart.png",
+    "codeAlong":"https://www.youtube.com/embed/67NfXWDI_Nk",
+    "lessonFiles": ["jazzy_bot_comeback_code.png"],
     "key": "1f"
   },
   {
@@ -105,7 +104,7 @@
     "lessonRequirements": ["line_follower"],
     "lessonAnalysis":"The way the line follower works is by detecting differences in light intensity between the path to follow and the rest of the surface. Ideally, the path and the surface will have a lot of contrast to make it easier for the line-follower sensor to detect. In the mBot the line-follower sensor has two pairs of sensors that emit and receive infrared light. This design makes it easy to detect if the mBot is on the path or if it is going off it. Make sure you watch the video to see the table that includes the values obtained from the two pairs of sensors. Using these values, it is easy to determine if the mBot needs to turn left or right in order to stay on the line: if both sensors are on the line move forward (value 0); if the right sensor is off (value 1), turn left slightly; if the left sensor is off, turn right (value 2). Nevertheless we will have to come up with a strategy for the mBot to find the path if both sensors are off. In this case we will program the mBot to back up until it finds its path again. ",
     "lessonDesign":"lineFollower_flowchart.png",
-    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "codeAlong":"https://www.youtube.com/embed/gxjQ19Q2rMI",
     "lessonFiles": ["line_follower.png"],
     "key": "1g"
   },
@@ -121,7 +120,7 @@
     "lessonRequirements": ["led","line_follower","ultrasonic"],
     "lessonAnalysis": "To complete this lesson, we will have to combine the knowledge acquired from previous lessons. We will use the code learned from the line follower and adapt it to respond to different events that could interrupt its course such as an object in its way and a crosswalk. Using what we know from using the ultrasonic sensor, we will program the mBot to detect objects while its moving and stop if there is something in its way. Using what we know from the values of the line follower we will adapt the original line follower code to react to a crosswalk that is represented in our circuit by a missing part in the path. ",
     "lessonDesign":"trafficSimulation_flowchart.png",
-    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "codeAlong":"https://www.youtube.com/embed/0KxNMLLLSRU",
     "lessonFiles": ["trafficSimulation_code.png"],
     "key": "1i"
   },
@@ -136,8 +135,8 @@
     "lessonObjectives": ["The mBot will be able follow a path using the line-follower.","The mBot will be able to detect if there is an object in the path using the ultrasonic sensor and wait until the object is removed.", "The mBot will interpret a missing section in the path to begin the 'finding parking spot strategy'", "The mBot will check right side for a parking spot, then left and if none is available, it will move forward. It will park in the first available spot", "If there is no available spot, the mBot will continue the circuit infinitely until there is a spot available"],
     "lessonRequirements": ["led","line_follower","ultrasonic"],
     "lessonAnalysis":"Since this program is adding features to the Traffic Simulation program, most of the code for the line follower and object detection system has been written already. In this program we will implement a strategy to find an available parking spot in which the mBot will check for the right spot (Figure 17:B), then the left spot (Figure 17:C) and if none is available it will continue through the circuit until a spot becomes available (Figure 17:D, E). To implement the strategy to find an available parking spot it will require some engineering and trial and error testing to determine the amount of voltage over the period of time required to turn as accurately as possible since it is required for the mBot to turn 90 degrees to use the ultrasonic sensor that is located at the front of the robot. This number however can change as well depending on the charge of the batteries that are being used on the mBot and minor adjustments might be needed for the execution of the program. Once this number has been calculated we can use it to calculate the voltage per time needed to turn 180 degrees if the first parking spot is not available and repeat the 90 degrees calculations to return the mBot to its original path. ",
-    "lessonDesign":"selfParking_flowchart.png",
-    "codeAlong":"https://www.youtube.com/embed/QFMPHPnKUS4",
+    "lessonDesign":"selfParkingFlowChart.png",
+    "codeAlong":"https://www.youtube.com/embed/0KxNMLLLSRU",
     "lessonFiles": ["selfParking_code1.png", "selfParking_code2.png"],
     "key": "1j"
   },
