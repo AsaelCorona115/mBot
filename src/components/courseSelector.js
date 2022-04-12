@@ -30,16 +30,18 @@ const CourseSelector = () => {
   const columnClass = "col-lg-" + 12 / courses.length + " col-md-6";
 
   return (
-    <div className="container courseSelectorContainer">
-      <div className="row courseSelectorTitle">
-        <div className="col-12" style={{ color: "aliceblue" }}>
-          <h1 className="fs-1">Welcome to SCSU Robotics!</h1>
+    <div className="container-fluid courseSelectorContainer">
+      <div className="row courseSelectorTitle d-md-block">
+        <div className="col-12 text-white ">
+          <h1 className="display-3 colorbackground d-inline px-5 border rounded">
+            Welcome to SCSU Robotics!
+          </h1>
         </div>
       </div>
 
-      <div className="row courses">
+      <div className="row">
         {courses.map((item) => (
-          <div className={columnClass} key={item.key}>
+          <div className="col-lg-4 col-md-12" key={item.key}>
             <CourseCard
               courseTitle={item.titleCourse}
               imgsrc={item.imgsrc}

@@ -23,7 +23,7 @@ function App() {
               <CourseMainPage
                 courseName="mBot"
                 description="Have you ever used an IDE? Do you know what a loop is? A conditional? No? Then this course is for you. If you have never written  line of code before, here you will learn about basic programming concepts that can be applied to any coding language, all while learning how to use the mBot! An affordable and educational robot that can be programmed using Scratch. Take you first steps to becoming a programmer!"
-                courseImage="https://www.makeblock.com/wp-content/uploads/2018/08/mbot_1080720_banner.jpg"
+                courseImage="https://www.lifewire.com/thmb/4w7aNRiK7sYO7jfMO2jTNhcTeK8=/1500x1500/filters:no_upscale()/_hero_SQ_3LW4149488-1-4313fb506d5641ba9f814f50f9047e9c.jpg"
                 courseThumbnail="https://www.lifewire.com/thmb/4w7aNRiK7sYO7jfMO2jTNhcTeK8=/1500x1500/filters:no_upscale()/_hero_SQ_3LW4149488-1-4313fb506d5641ba9f814f50f9047e9c.jpg"
               />
             </Route>

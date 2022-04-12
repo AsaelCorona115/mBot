@@ -27,12 +27,6 @@ const IndividualLesson = (props) => {
     <div className="individualLesson">
       {lessonInformation && (
         <div className="container-fluid mt-5 lessonContainer">
-          <img
-            src={lessonInformation[0].background}
-            alt="LessonBackground"
-            className="LessonBackground"
-          />
-
           <div className="row">
             {/* Lesson Header */}
             <div className="col-12 lessonHeader">
@@ -45,8 +39,10 @@ const IndividualLesson = (props) => {
 
           {lessonInformation[0].lessonPresentation && (
             <div className="row mt-5">
-              <div className="col-2 display-5 mt-5">Presentation: </div>
-              <div className="col-10 text-start mt-5">
+              <div className="col-lg-2 col-md-12 display-5 mt-5">
+                Presentation:{" "}
+              </div>
+              <div className="col-lg-10 col-md-12 text-start mt-5">
                 <p className="fs-3 mt-5">
                   {lessonInformation[0].lessonPresentation}
                 </p>
@@ -56,8 +52,10 @@ const IndividualLesson = (props) => {
 
           {lessonInformation[0].lessonRequirements.length != 0 && (
             <div className="row mt-5">
-              <div className="col-2 display-5 mt-5">Requirements: </div>
-              <div className="col-10 text-center">
+              <div className="col-md-12 col-lg-2 display-5 mt-5">
+                Requirements:{" "}
+              </div>
+              <div className="col-md-12 col-lg-10 text-center my-5">
                 {lessonInformation[0].lessonRequirements.map((item) => {
                   objKey++;
                   return (
@@ -75,9 +73,11 @@ const IndividualLesson = (props) => {
 
           {lessonInformation[0].lessonObjectives && (
             <div className="row mt-5">
-              <div className="col-2 display-5 mt-5 ">Objetives: </div>
-              <div className="col-10 text-start">
-                <ol className="mainText">
+              <div className="col-md-12 col-lg-2 display-5 mt-5 ">
+                Objetives:{" "}
+              </div>
+              <div className="col-md-12 col-lg-10 mt-5">
+                <ol className="mainText mt-5">
                   {lessonInformation[0].lessonObjectives.map((objective) => {
                     objKey++;
                     return (
@@ -93,22 +93,27 @@ const IndividualLesson = (props) => {
 
           {lessonInformation[0].lessonAnalysis && (
             <div className="row mt-5">
-              <div className="col-2 display-5 mt-5 ">Analysis: </div>
-              <div className="col-10 text-start">
-                <p className="fs-3">{lessonInformation[0].lessonAnalysis}</p>
+              <div className="col-md-12 col-lg-2 display-5 mt-5 ">
+                Analysis:{" "}
+              </div>
+              <div className="col-md-12 col-lg-10 text-start mt-5">
+                <p className="fs-3 mt-5">
+                  {lessonInformation[0].lessonAnalysis}
+                </p>
               </div>
             </div>
           )}
 
           {lessonInformation[0].lessonDesign && (
             <div className="row">
-              <div className="col-2 display-5 mt-5">Design: </div>
-              <div className="col-10 mt-5">
+              <div className="col-md-12 col-lg-2 display-5 mt-5">Design: </div>
+              <div className="col-md-12 col-lg-10 mt-5">
                 <p className="fs-4 mt-5">
-                  Before we dive any further into the program, plan ahead!
+                  Before we dive any further into the program, plan ahead! (zoom
+                  in for better detail)
                 </p>
                 <img
-                  className="diagramImage"
+                  className="img-fluid"
                   src={require(`../../public/lessonFlowCharts/${lessonInformation[0].lessonDesign}`)}
                   alt=""
                 />
@@ -122,8 +127,10 @@ const IndividualLesson = (props) => {
 
           {lessonInformation[0].codeAlong && (
             <div className="row mt-5">
-              <div className="col-2 display-5 mt-5 ">Code Along: </div>
-              <div className="col-10 mt-5 text-start">
+              <div className="col-md-12 col-lg-2 display-5 mt-5 ">
+                Code Along:{" "}
+              </div>
+              <div className="col-md-12 col-lg-10 mt-5 text-start">
                 <div className="ratio ratio-16x9 mt-5">
                   <iframe
                     src={lessonInformation[0].codeAlong}
@@ -137,12 +144,12 @@ const IndividualLesson = (props) => {
 
           {lessonInformation[0].lessonFiles && (
             <div className="row mt-5">
-              <div className="col-2 display-5 mt-5 ">Code: </div>
-              <div className="col-10 mt-5 text-center">
+              <div className="col-md-12 col-lg-2 display-5 mt-5 ">Code: </div>
+              <div className="col-md-12 col-lg-10 mt-5 text-center">
                 <p className="fs-4 mt-5">
                   If you are having problems building the program, you can take
                   a look at what is supposed to look like, but try to build it
-                  yourself before looking!
+                  yourself before looking! (zoom in!)
                 </p>
                 {lessonInformation[0].lessonFiles.map((item) => {
                   objKey++;
@@ -150,13 +157,14 @@ const IndividualLesson = (props) => {
                     <img
                       key={objKey}
                       src={require(`../../public/lessonCodeImages/${item}`)}
-                      className="codeImage"
+                      className="img-fluid"
                       alt={item}
                     />
                   );
                 })}
                 <p className="fs-4 text-center">
                   Download it
+                  <br />
                   <a
                     href="https://github.com/AsaelCorona115/mBotPrograms"
                     target="_blank"

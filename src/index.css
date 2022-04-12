@@ -25,7 +25,7 @@
   margin: 20px 0px;
   border: solid 2px black;
   padding: 20px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(17.5px);
   -webkit-backdrop-filter: blur(17.5px);
@@ -107,6 +107,7 @@ li {
   width: 100%;
   left: 0px;
   top: 0px;
+  height: 370px;
 }
 
 .mainPageBackground {
@@ -115,7 +116,7 @@ li {
   width: 100%;
   left: 0px;
   top: 0px;
-  max-height: 700px;
+  height: 700px;
 }
 
 .LessonBackground {
@@ -128,10 +129,8 @@ li {
   background-color: #061377;
 }
 
-.mainNavigationLink:link,
 .mainNavigationLink:visited {
   color: aliceblue;
-  font-size: 2rem;
 }
 
 .mainNavigationLink:hover {
@@ -143,4 +142,8 @@ li {
   background-color: transparent;
   border: none;
   max-height: 150px;
+}
+
+.colorbackground{
+  background-color: #061377;
 }

@@ -25,24 +25,29 @@ const CourseMainPage = (props) => {
 
   return (
     <div className="courseMainPage">
-      <img
-        src={props.courseImage}
-        alt="NavbarBackground"
-        className="mainPageBackground"
-      />
-
       <div className="courseDescriptor container">
-        <div className="row">
-          <div className="col-6 text-start">
-            <h1 className="descriptionTitle">About this course: </h1>
-            <p className="fs-4">{props.description}</p>
+        <div className="row mt-5">
+          <div className="col-md-12 col-lg-6 text-lg-start text-md-center mt-5">
+            <h1 className="descriptionTitle text-dark d-block">
+              About this course:
+            </h1>
+            <p className="fs-4 text-dark d-block">{props.description}</p>
+          </div>
+          <div className="col-lg-6 col-md-12">
+            <img
+              src={props.courseImage}
+              alt="NavbarBackground"
+              className="img-fluid border border-dark border-5 rounded"
+            />
           </div>
         </div>
       </div>
 
-      <div className="lessonList container">
-        <h1 className="courseDescriptor">Lesson List</h1>
-        <div className="row">
+      <div className="lessonList container mt-5">
+        <h1 className="courseDescriptor bg-white text-primary d-inline border border-primary rounded p-3 align-middle">
+          Lesson List
+        </h1>
+        <div className="row mt-5 border border-primary">
           <div className="col-12">
             <div
               className="accordion accordion-flush"

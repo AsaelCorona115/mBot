@@ -136,19 +136,9 @@
     "lessonRequirements": ["led","line_follower","ultrasonic"],
     "lessonAnalysis":"Since this program is adding features to the Traffic Simulation program, most of the code for the line follower and object detection system has been written already. In this program we will implement a strategy to find an available parking spot in which the mBot will check for the right spot (Figure 17:B), then the left spot (Figure 17:C) and if none is available it will continue through the circuit until a spot becomes available (Figure 17:D, E). To implement the strategy to find an available parking spot it will require some engineering and trial and error testing to determine the amount of voltage over the period of time required to turn as accurately as possible since it is required for the mBot to turn 90 degrees to use the ultrasonic sensor that is located at the front of the robot. This number however can change as well depending on the charge of the batteries that are being used on the mBot and minor adjustments might be needed for the execution of the program. Once this number has been calculated we can use it to calculate the voltage per time needed to turn 180 degrees if the first parking spot is not available and repeat the 90 degrees calculations to return the mBot to its original path. ",
     "lessonDesign":"selfParkingFlowChart.png",
-    "codeAlong":"https://www.youtube.com/embed/0KxNMLLLSRU",
+    "codeAlong":"https://www.youtube.com/embed/tk8J2LJx4Js",
     "lessonFiles": ["selfParking_code1.png", "selfParking_code2.png"],
     "key": "1j"
-  },
-  {
-    "background": "https://color-hex.org/colors/061377.png",
-    "course" : "mBot",
-    "lessonNumber": "10",
-    "lessonTitle": "mAze Solver",
-    "lessonDescription":
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et doloremagna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "lessonRequirements": [],
-    "key": "1k"
   }
 ],
 "AutomationLessons":[
@@ -162,7 +152,7 @@
       "lessonRequirements": [],
       "lessonAnalysis": "EZ",
       "lessonDesign": "blinking_lights.png",
-      "codeAlong": "https://www.youtube.com/embed/YS35VHsbS-0",
+      "codeAlong": "https://www.youtube.com/embed/0KxNMLLLSRU",
       "lessonFiles":["blinking_lights_code_image.png"],
       "key": "1a"
     }
