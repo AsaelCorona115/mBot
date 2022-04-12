@@ -7,7 +7,9 @@ const IndividualLesson = (props) => {
   let counter = 1;
 
   useEffect(() => {
-    fetch(`http://localhost:8000/${props.courseName}Lessons?key=${key}`)
+    fetch(
+      `https://my-json-server.typicode.com/AsaelCorona115/CSC400Data/${props.courseName}Lessons?key=${key}`
+    )
       .then((res) => {
         if (!res.ok) {
           throw Error("Could not fetch data");
