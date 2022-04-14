@@ -8,7 +8,9 @@ const CourseMainPage = (props) => {
   const [lessonList, setLessonList] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/${props.courseName}Lessons`)
+    fetch(
+      `https://my-json-server.typicode.com/AsaelCorona115/CSC400Data/${props.courseName}Lessons`
+    )
       .then((res) => {
         if (!res.ok) {
           throw Error("Could not fetch data");
