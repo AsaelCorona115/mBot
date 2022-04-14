@@ -1,4 +1,35 @@
 {"mBotLessons":[
+    {"course" : "mBot",
+    "number": "1",
+    "title": "Course & Hardware Overview",
+    "description":
+      "Before we start coding, learn about the course and the mBot. What is is, how it works and what you'll learn",
+    "req": [],
+    "video": "https://www.youtube.com/embed/afh84WKciSc",
+    "key": "1a"
+    },
+    { "course" : "mBot",
+      "number": "2",
+      "title": "Software Overview",
+      "description":"Now that you know the hardware, take a look at the software. There are many ways to interact with the mBot!",
+      "req": [],
+      "video": "https://www.youtube.com/embed/tu59pFD50sQ", 
+      "key": "1b"
+    },
+    { "course" : "mBot",
+      "number": "3",
+      "title": "Blinking Lights",
+      "description":
+        "Teach the mBot to use its integrated LED lights, all while learning about loops and conditionals. Let's get with the coding!",
+      "presentation" : "Learn how to interact with the mBot! An easy introduction to coding, learn your first blocks in Scratch to create a program and upload it to the mBot using Arduino Mode. All while learning basic programming concepts! ",
+      "objectives": ["The program will alternate blinking each LED",  "The program shall be continuous",  "Each LED will be turned on for one second"],
+      "req": ["led"],
+      "analysis": "Although there are not many req for this program, keep in mind that we have to find a way to make this program continuous, only one light should be on and specify the color that each light will be. These are your programming concepts: loops, RGB, and how to interact with the mBot.",
+      "design": "3.png",
+      "video": "https://www.youtube.com/embed/8NBlibJKG7c",
+      "lessonFiles":["3.png"],
+      "key": "1c"
+    },
     {
       "course" : "mBot",
       "number": "4",
