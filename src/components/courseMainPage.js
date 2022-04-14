@@ -8,9 +8,7 @@ const CourseMainPage = (props) => {
   const [lessonList, setLessonList] = useState(null);
 
   useEffect(() => {
-    fetch(
-      `https://my-json-server.typicode.com/AsaelCorona115/CSC400Data/${props.courseName}Lessons`
-    )
+    fetch(`http://localhost:8000/${props.courseName}Lessons`)
       .then((res) => {
         if (!res.ok) {
           throw Error("Could not fetch data");
@@ -71,8 +69,7 @@ const CourseMainPage = (props) => {
                           aria-expanded="false"
                           aria-controls={`flush-collapse${lesson.key}`}
                         >
-                          Lesson Number {lesson.lessonNumber}:{" "}
-                          {lesson.lessonTitle}
+                          Lesson Number {lesson.number}: {lesson.title}
                         </button>
                       </h2>
                       <div
@@ -82,7 +79,7 @@ const CourseMainPage = (props) => {
                         data-bs-parent="#accordionFlushExample"
                       >
                         <div className="accordion-body fs-4">
-                          {lesson.lessonDescription}
+                          {lesson.description}
                           <br />
                           <br />
                           <Link

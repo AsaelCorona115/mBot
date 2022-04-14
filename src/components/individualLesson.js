@@ -7,9 +7,7 @@ const IndividualLesson = (props) => {
   let counter = 1;
 
   useEffect(() => {
-    fetch(
-      `https://my-json-server.typicode.com/AsaelCorona115/CSC400Data/${props.courseName}Lessons?key=${key}`
-    )
+    fetch(`http://localhost:8000/${props.courseName}Lessons?key=${key}`)
       .then((res) => {
         if (!res.ok) {
           throw Error("Could not fetch data");
@@ -33,32 +31,28 @@ const IndividualLesson = (props) => {
             {/* Lesson Header */}
             <div className="col-12 lessonHeader">
               <h1 className="display-1 fw-bolder">
-                Lesson Number {lessonInformation[0].lessonNumber} :{" "}
-                {lessonInformation[0].lessonTitle}
+                Lesson Number {lessonInformation[0].number} :{" "}
+                {lessonInformation[0].title}
               </h1>
             </div>
           </div>
 
-          {lessonInformation[0].lessonPresentation && (
+          {lessonInformation[0].presentation && (
             <div className="row mt-5">
               <div className="col-lg-2 col-md-12 display-5 mt-5">
                 Presentation:{" "}
               </div>
               <div className="col-lg-10 col-md-12 text-start mt-5">
-                <p className="fs-3 mt-5">
-                  {lessonInformation[0].lessonPresentation}
-                </p>
+                <p className="fs-3 mt-5">{lessonInformation[0].presentation}</p>
               </div>
             </div>
           )}
 
-          {lessonInformation[0].lessonRequirements.length != 0 && (
+          {lessonInformation[0].req.length != 0 && (
             <div className="row mt-5">
-              <div className="col-md-12 col-lg-2 display-5 mt-5">
-                Requirements:{" "}
-              </div>
+              <div className="col-md-12 col-lg-2 display-5 mt-5">req: </div>
               <div className="col-md-12 col-lg-10 text-center my-5">
-                {lessonInformation[0].lessonRequirements.map((item) => {
+                {lessonInformation[0].req.map((item) => {
                   objKey++;
                   return (
                     <img
@@ -73,14 +67,14 @@ const IndividualLesson = (props) => {
             </div>
           )}
 
-          {lessonInformation[0].lessonObjectives && (
+          {lessonInformation[0].objectives && (
             <div className="row mt-5">
               <div className="col-md-12 col-lg-2 display-5 mt-5 ">
                 Objetives:{" "}
               </div>
               <div className="col-md-12 col-lg-10 mt-5">
                 <ol className="mainText mt-5">
-                  {lessonInformation[0].lessonObjectives.map((objective) => {
+                  {lessonInformation[0].objectives.map((objective) => {
                     objKey++;
                     return (
                       <li className="fs-3" key={objKey}>
@@ -93,20 +87,18 @@ const IndividualLesson = (props) => {
             </div>
           )}
 
-          {lessonInformation[0].lessonAnalysis && (
+          {lessonInformation[0].analysis && (
             <div className="row mt-5">
               <div className="col-md-12 col-lg-2 display-5 mt-5 ">
                 Analysis:{" "}
               </div>
               <div className="col-md-12 col-lg-10 text-start mt-5">
-                <p className="fs-3 mt-5">
-                  {lessonInformation[0].lessonAnalysis}
-                </p>
+                <p className="fs-3 mt-5">{lessonInformation[0].analysis}</p>
               </div>
             </div>
           )}
 
-          {lessonInformation[0].lessonDesign && (
+          {lessonInformation[0].design && (
             <div className="row">
               <div className="col-md-12 col-lg-2 display-5 mt-5">Design: </div>
               <div className="col-md-12 col-lg-10 mt-5">
@@ -116,7 +108,7 @@ const IndividualLesson = (props) => {
                 </p>
                 <img
                   className="img-fluid"
-                  src={require(`../../public/lessonFlowCharts/${lessonInformation[0].lessonDesign}`)}
+                  src={require(`../../public/lessonFlowCharts/${lessonInformation[0].design}`)}
                   alt=""
                 />
                 <p className="fs-4">
@@ -127,7 +119,7 @@ const IndividualLesson = (props) => {
             </div>
           )}
 
-          {lessonInformation[0].codeAlong && (
+          {lessonInformation[0].video && (
             <div className="row mt-5">
               <div className="col-md-12 col-lg-2 display-5 mt-5 ">
                 Code Along:{" "}
@@ -135,7 +127,7 @@ const IndividualLesson = (props) => {
               <div className="col-md-12 col-lg-10 mt-5 text-start">
                 <div className="ratio ratio-16x9 mt-5">
                   <iframe
-                    src={lessonInformation[0].codeAlong}
+                    src={lessonInformation[0].video}
                     title="YouTube video"
                     allowFullScreen
                   ></iframe>

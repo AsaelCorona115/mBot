@@ -1,70 +1,116 @@
-{
-
-"mBotLessons":[
-  {
-    "background": "https://color-hex.org/colors/061377.png",
-    "course" : "mBot",
-    "lessonNumber": "7",
-    "lessonTitle": "Follow the line",
-    "lessonDescription":
-      "Now that we're starting to feel more comfortable using sensors, we will learn how to use the line follower, a sensor that is a lttle bit more complicated but one of the most useful sensors to tell the mBot how to move.",
-    "lessonPresentation":"Now that we have dominated a few components and sensors is time to start teaching the mBot how to move. One of the most useful components to teach the mBot to move in a certain way is to use the line follower module included at the bottom which detects if the mBot is on top of a line, or if it has gone left or right. In this lesson new programmers will use multiple conditionals for the first time, and practicing their skills involving loops.",
-    "lessonObjectives": ["The mBot shall detect a path marked by a dark line.", "The mBot shall move forward along the path.", "The mBot shall turn as needed to stay on the path."
-      ,"The mBot shall execute a strategy to find the path if it strays off of the path."],
-    "lessonRequirements": ["line_follower"],
-    "lessonAnalysis":"The way the line follower works is by detecting differences in light intensity between the path to follow and the rest of the surface. Ideally, the path and the surface will have a lot of contrast to make it easier for the line-follower sensor to detect. In the mBot the line-follower sensor has two pairs of sensors that emit and receive infrared light. This design makes it easy to detect if the mBot is on the path or if it is going off it. Make sure you watch the video to see the table that includes the values obtained from the two pairs of sensors. Using these values, it is easy to determine if the mBot needs to turn left or right in order to stay on the line: if both sensors are on the line move forward (value 0); if the right sensor is off (value 1), turn left slightly; if the left sensor is off, turn right (value 2). Nevertheless we will have to come up with a strategy for the mBot to find the path if both sensors are off. In this case we will program the mBot to back up until it finds its path again. ",
-    "lessonDesign":"lineFollower_flowchart.png",
-    "codeAlong":"https://www.youtube.com/embed/gxjQ19Q2rMI",
-    "lessonFiles": ["line_follower.png"],
-    "key": "1g"
-  },
-  {
-    "background": "https://color-hex.org/colors/061377.png",
-    "course" : "mBot",
-    "lessonNumber": "8",
-    "lessonTitle": "Traffic Simulation",
-    "lessonDescription":
-      "You know how to use the line follower, you know how to use the ultrasonic sensor, and you can command the LED lights and speakers. But can you do them all in one program? Well of course, here you'll learn how to combine most of the elements we've learned in the previous lessons to simulate the behavior of a driver.",
-    "lessonPresentation": "Starting this lesson, we will begin to combine elements from previous lessons to create programs that are slightly more involved. In this first example we will simulate the behavior of a person driving a car. We will program the mBot to follow a path using the line follower all while its able to respond to an object in its path and a crosswalk (represented by a missing section in the path). While doing this lesson, we will review how to use  multiple components of the mBot from  previous lessons and implement programming concepts such as loops, and multiple conditionals. ",
-    "lessonObjectives": ["The mBot will be able follow a path using the line-follower.","The mBot will be able to detect if there is an object in the path using the ultrasonic sensor and wait until the object is removed.", "The mBot will briefly pause if there is a crosswalk (represented by a missing section in the path), turn on its LED lights to signal a stop and after a few seconds it will be able to continue and find its path again to continue with the circuit."],
-    "lessonRequirements": ["led","line_follower","ultrasonic"],
-    "lessonAnalysis": "To complete this lesson, we will have to combine the knowledge acquired from previous lessons. We will use the code learned from the line follower and adapt it to respond to different events that could interrupt its course such as an object in its way and a crosswalk. Using what we know from using the ultrasonic sensor, we will program the mBot to detect objects while its moving and stop if there is something in its way. Using what we know from the values of the line follower we will adapt the original line follower code to react to a crosswalk that is represented in our circuit by a missing part in the path. ",
-    "lessonDesign":"trafficSimulation_flowchart.png",
-    "codeAlong":"https://www.youtube.com/embed/0KxNMLLLSRU",
-    "lessonFiles": ["trafficSimulation_code.png"],
-    "key": "1i"
-  },
-  {
-    "background": "https://color-hex.org/colors/061377.png",
-    "course" : "mBot",
-    "lessonNumber": "9",
-    "lessonTitle": "Self Parking",
-    "lessonDescription":
-      "One more step! This program builds on top of the traffic simulation. Now that the mBot knows how to simulate like its driving, it is time to show it how to park. In this new program we make use of all the elements from the last program to teach the mBot a strategy on how to find a parking spot.",
-    "lessonPresentation":"After programming the mBot how to 'drive' we are going to implement a strategy that shows the mBot 'how to find a parking spot and park'. This lesson builds on top of the code from last lesson and uses the same components to figure out how to find a parking spot using the ultrasonic sensor and how to react to find a parking spot.",
-    "lessonObjectives": ["The mBot will be able follow a path using the line-follower.","The mBot will be able to detect if there is an object in the path using the ultrasonic sensor and wait until the object is removed.", "The mBot will interpret a missing section in the path to begin the 'finding parking spot strategy'", "The mBot will check right side for a parking spot, then left and if none is available, it will move forward. It will park in the first available spot", "If there is no available spot, the mBot will continue the circuit infinitely until there is a spot available"],
-    "lessonRequirements": ["led","line_follower","ultrasonic"],
-    "lessonAnalysis":"Since this program is adding features to the Traffic Simulation program, most of the code for the line follower and object detection system has been written already. In this program we will implement a strategy to find an available parking spot in which the mBot will check for the right spot (Figure 17:B), then the left spot (Figure 17:C) and if none is available it will continue through the circuit until a spot becomes available (Figure 17:D, E). To implement the strategy to find an available parking spot it will require some engineering and trial and error testing to determine the amount of voltage over the period of time required to turn as accurately as possible since it is required for the mBot to turn 90 degrees to use the ultrasonic sensor that is located at the front of the robot. This number however can change as well depending on the charge of the batteries that are being used on the mBot and minor adjustments might be needed for the execution of the program. Once this number has been calculated we can use it to calculate the voltage per time needed to turn 180 degrees if the first parking spot is not available and repeat the 90 degrees calculations to return the mBot to its original path. ",
-    "lessonDesign":"selfParkingFlowChart.png",
-    "codeAlong":"https://www.youtube.com/embed/tk8J2LJx4Js",
-    "lessonFiles": ["selfParking_code1.png", "selfParking_code2.png"],
-    "key": "1j"
-  }
-],
-"AutomationLessons":[
+{"mBotLessons":[
+    {"course" : "mBot",
+    "number": "1",
+    "title": "Course & Hardware Overview",
+    "description":
+      "Before we start coding, learn about the course and the mBot. What is is, how it works and what you'll learn",
+    "req": [],
+    "video": "https://www.youtube.com/embed/afh84WKciSc",
+    "key": "1a"
+    },
+    { "course" : "mBot",
+      "number": "2",
+      "title": "Software Overview",
+      "description":"Now that you know the hardware, take a look at the software. There are many ways to interact with the mBot!",
+      "req": [],
+      "video": "https://www.youtube.com/embed/tu59pFD50sQ", 
+      "key": "1b"
+    },
+    { "course" : "mBot",
+      "number": "3",
+      "title": "Blinking Lights",
+      "description":
+        "Teach the mBot to use its integrated LED lights, all while learning about loops and conditionals. Let's get with the coding!",
+      "presentation" : "Learn how to interact with the mBot! An easy introduction to coding, learn your first blocks in Scratch to create a program and upload it to the mBot using Arduino Mode. All while learning basic programming concepts! ",
+      "objectives": ["The program will alternate blinking each LED",  "The program shall be continuous",  "Each LED will be turned on for one second"],
+      "req": ["led"],
+      "analysis": "Although there are not many req for this program, keep in mind that we have to find a way to make this program continuous, only one light should be on and specify the color that each light will be. These are your programming concepts: loops, RGB, and how to interact with the mBot.",
+      "design": "3.png",
+      "video": "https://www.youtube.com/embed/8NBlibJKG7c",
+      "lessonFiles":["3.png"],
+      "key": "1c"
+    },
     {
-      "course" : "Automation",
-      "lessonNumber": "1",
-      "lessonTitle": "My first automation lesson!",
-      "lessonDescription":
-        "Test lesson for automation",
-      "lessonObjectives": ["No objectives so far"],
-      "lessonRequirements": [],
-      "lessonAnalysis": "EZ",
-      "lessonDesign": "blinking_lights.png",
-      "codeAlong": "https://www.youtube.com/embed/0KxNMLLLSRU",
-      "lessonFiles":["blinking_lights_code_image.png"],
-      "key": "1a"
+      "course" : "mBot",
+      "number": "4",
+      "title": "Jazzy Bot",
+      "description":
+        "Let's talk about the speakers. Time to make some music",
+      "presentation": "Now we are going to interact with another component of the mBot: the built-in-speaker. We will learn how to use the built-in-speaker to play a famous jazz phrase: 'the lick'. We'll learn about sound frequencies, how to interact with the built-in-speaker and a little bit of music.",
+      "objectives": ["Use the built-in-speaker of the mBot to play 'the lick' "],
+      "req": ["speaker"],
+      "analysis":"This lesson requires more than robotics knowledge. We need a little bit of music knowledge and physics. Watch the video for the written music and the frequencies of the melody notes. But, don't worry if you don't know how to read music. The important thing is that you learn how to interact with the mBot speakers. The mBot can play notes from D0 to B8. If at the end you'd like to challenge yourself try to play your own melody!",
+      "design":"4.png",
+      "video":"https://www.youtube.com/embed/QFMPHPnKUS4",
+      "lessonFiles": ["4.png"],
+      "key": "1d"
+    },
+    { "course" : "mBot",
+      "number": "5",
+      "title": "mRgency Bot",
+      "description":
+        "Time to tackle your first sensor: the light sensor. Lights out. Call the mRgency bot!",
+      "presentation":"It's time to use our first sensor: the light sensor. Learn how to detect the light levels in a room, and we will program the mBot to turn on its lights and make sounds if it gets dark, an emergency mBot! The programming concepts you'll learn are: conditionals, for loops, how to read information from a sensor and how to use it in our programs.",
+      "objectives": ["Measure the available light", "Make a sound when the current light level drops 20%  below the normal light level", "The program will alternate blinking each LED","Turn off the alarm when the light level rises above the low-light threshold."],
+      "req": ["speaker", "led", "light_sensor"],
+      "analysis":"The mBot has a light sensor that can be used to measure the light levels in a room. It returns a value of 0-1024. However, these levels may vary. Therefore, before we can use the readings from the sensor, we have to calculate the mean of the light levels. To do this, we will take 10 measurements of the light levels and calculate the mean. If the light goes below 20% of the mean, the mBot will turn on its lights and make sound to work as a blackout alarm.",
+      "design":"5.png",
+      "video":"https://www.youtube.com/embed/QISGMVtna-4",
+      "lessonFiles": ["5.png"],
+      "key": "1e"
+    },
+    { "course" : "mBot",
+      "number": "6",
+      "title": "JazzyBot, the comeback",
+      "description":
+        "Learn how to create a Theremin using the mBot, a musical instrument that changes the note it plays based on how far an object is using a new sensor: the ultrasonic sensor.",
+      "presentation":"The ultrasonic sensor is one of the most useful sensors integrated in the mBot and we are going to use it a lot in our next programs. It allows us to detect how far an object is ahead. It works similarly to a SONAR by sending an ultrasonic signal from one eye and receiving it on the other. Although humans can't hear it, the mBot calculates the time it takes to receive the echo and uses this information to calculate the distance in centimeters. We will use the ultrasonic sensor together with the integrated speakers to create a Theremin, an instrument that tells the mBot to play a tone that changes depending on the distance from an object ahead.",
+      "objectives": ["The mBot shall play a tone when something is within 15-50cm", "If the object is out of range, (less than 15 cm or more than 50) the mBot will stop playing a tune", "The mBot will play a range of an octave based on equal spacing over the 15-50cm range", "Highest note will be played at 15 cm and lowest at 50"],
+      "req": ["ultrasonic"],
+      "analysis":"The first step to build the Theremin is to determine the interval values for the note values. The 15 cm mark will be the lower bound and will trigger the highest note. The lowest note will trigger at the 50cm mark plus a 6-10 cm cushion to make sure it gets played. First we calculate the range by subtracting the lowest end from the high end (50-15 = 35). Then, to index the notes we will use the modulo operator, which returns the remainder of a division. We do the following to index the notes: Subtract the minimum value from the range to scale the range down to the values we are interested in. Use the mod operator to get the remainder from dividing the range by the number of intervals. Subtract the remainder from the range. Perform the division to get the index. For instance: we begin knowing that our range is 15-50cm. To play 7 notes: 50 -15 = 35, 35/7 = 5. Each note would have a 5 cm interval. If the sensor returns a value of 15.72cm, we subtract the result of the MOD operator to convert the to an integer (15.72 - (15.72MOD5) = 15.72-0.72 = 15). Lastly, by dividing this number by 5 we can calculate a value that represents our note.",
+      "design":"6.png",
+      "video":"https://www.youtube.com/embed/67NfXWDI_Nk",
+      "lessonFiles": ["6.png"],
+      "key": "1f"
+    },
+    { "course" : "mBot",
+      "number": "7",
+      "title": "Follow the line",
+      "description":"We will learn how to use the line follower, one of the most useful sensors to tell the mBot how to move.",
+      "presentation":"One of the most useful components of the mBot is the line follower. By using a pair of sensors that point at the floor, the mBot is capable to determine if its on a line, or skewed left or right based on the light reflected by a signal. Using this information we can teach the mBot how to follow a path represented by a dark line.",
+      "objectives": ["The mBot shall detect a path marked by a dark line.", "The mBot should be able to follow the path.","The mBot shall execute a strategy to find the path if it strays off of the path."],
+      "req": ["line_follower"],
+      "analysis":"The line follower works by detecting differences in light intensity between the path to follow and the rest of the surface. Ideally, the path and the surface will have a lot of contrast. In the mBot the line-follower has two pairs of sensors that emit and receive infrared light. This makes it easy to detect if the mBot is on the path or if it is going off it. If both sensors are on the line it returns a value of 0 which tells us to mean forward; a value of 1 means the right sensor is off  so turn left slightly; and a value 2 means turn right. Using these values, we can follow a given path.  Nevertheless we will have to come up with a strategy to find the path if both sensors are off. In this case we will program the mBot to back up until it finds its path again.",
+      "design":"7.png",
+      "video":"https://www.youtube.com/embed/gxjQ19Q2rMI",
+      "lessonFiles": ["7.png"],
+      "key": "1g"
+    },
+    { "course" : "mBot",
+      "number": "8",
+      "title": "Traffic Simulation",
+      "description":"Using the line follower, ultrasonic sensor, LED lights and speakers we simulate the behavior of a driver.",
+      "presentation": "For the last lessons we will combine all we have learned to create programs that are slightly more complicated. First we will simulate the behavior of a driver by using the line follower simultaneously with the ultrasonic sensor to react to objects in the path, and a stop sign (represented by a missing section in the path). We will review the multiple components from previous lessons and implement programming concepts such as loops, and multiple conditionals.",
+      "objectives": ["The mBot will follow a path using the line-follower.","The mBot will detect objects in the path using the ultrasonic sensor and wait until the object is removed.", "The mBot will pause for a stop sign (a missing section in the path) and use the LED lights to signal a stop. After a few seconds it will be able to continue and find its path again"],
+      "req": ["led","line_follower","ultrasonic"],
+      "analysis": "This program is based on the code learned from the line follower lesson. We adapt it to respond to different events that could interrupt its course such as an object in the path or a stop sign. Using the ultrasonic sensor, we will program the mBot to detect objects and stop if there is something in its way. Using what we know from the line follower code, we will adapt it to react to a missing part in the path that represents a stop sign.",
+      "design":"8.png",
+      "video":"https://www.youtube.com/embed/0KxNMLLLSRU",
+      "lessonFiles": ["8.png"],
+      "key": "1i"
+    },
+    { "course" : "mBot",
+      "number": "9",
+      "title": "Self Parking",
+      "description":"Last step! Built on top of the traffic simulation to teach the mBot how to park. The culmination of the course!",
+      "presentation":"After programming the mBot to 'drive' we are going to implement a strategy to show the mBot 'how to park'. This lesson builds on top of the last lesson and uses the same components to find a parking spot and park.",
+      "objectives": ["The mBot will follow a path using the line-follower.","The mBot will detect an object in the path and wait until the object is removed.", "The mBot will interpret a missing section in the path to begin the 'finding parking spot strategy'", "The mBot will park in the first available spot", "If there is no available spot, the mBot will continue the circuit until a spot becomes available"],
+      "req": ["led","line_follower","ultrasonic"],
+      "analysis":"This program is based on the code written in the last lesson. We will implement a strategy to find an available parking spot in which the mBot will check the right spot, then the left spot and if none is available it will continue through the circuit until a spot becomes available. This strategy requires some engineering and trial and error testing to determine the correct speed and time required to turn as accurately as possible to use the ultrasonic sensor located at the front of the mBot. Minor adjustments might be needed for the execution of the program since speed and time vary depending on the charge of the batteries.",
+      "design":"9.png",
+      "video":"https://www.youtube.com/embed/tk8J2LJx4Js",
+      "lessonFiles": ["9A.png", "9B.png"],
+      "key": "1j"
     }
-]  
-}
+  ]
+  }
