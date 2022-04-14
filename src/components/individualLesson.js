@@ -52,7 +52,9 @@ const IndividualLesson = (props) => {
 
           {lessonInformation[0].req.length != 0 && (
             <div className="row mt-5">
-              <div className="col-md-12 col-lg-2 display-5 mt-5">req: </div>
+              <div className="col-md-12 col-lg-2 display-5 mt-5">
+                Requirements:{" "}
+              </div>
               <div className="col-md-12 col-lg-10 text-center my-5">
                 {lessonInformation[0].req.map((item) => {
                   objKey++;
