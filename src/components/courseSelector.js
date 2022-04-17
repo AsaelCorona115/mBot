@@ -3,14 +3,14 @@ import CourseCard from "./courseCard";
 const CourseSelector = () => {
   const [courses, setCourses] = useState([
     {
-      titleCourse: "Mbot",
+      titleCourse: "mBot",
       imgsrc: "https://thumbs.gfycat.com/FlickeringBadBanteng-max-1mb.gif",
       CourseDescription:
         "Do you think programming is hard? Worry not! This course will help you learn basic concepts of programming in Scratch that are applicable to more advanced programming languages such as Python, C, or Javascript. All while working with the mBot! An affordable educational robot created for beginners!",
       key: "ACourse",
     },
     {
-      titleCourse: "MatLab",
+      titleCourse: "Matlab",
       CourseDescription:
         "Do you think programming is hard? Worry not! This course will help you learn basic concepts of programming in Scratch that are applicable to more advanced programming languages such as Python, C, or Javascript. All while working with the mBot! An affordable educational robot created for beginners!",
       imgsrc:
