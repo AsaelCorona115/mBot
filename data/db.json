@@ -6,6 +6,7 @@
       "Before we start coding, learn about the course and the mBot. What is is, how it works and what you'll learn",
     "req": [],
     "video": "https://www.youtube.com/embed/afh84WKciSc",
+    "repo":"https://github.com/AsaelCorona115/mBotPrograms",
     "key": "1a"
     },
     { "course" : "mBot",
@@ -13,7 +14,8 @@
       "title": "Software Overview",
       "description":"Now that you know the hardware, take a look at the software. There are many ways to interact with the mBot!",
       "req": [],
-      "video": "https://www.youtube.com/embed/tu59pFD50sQ", 
+      "video": "https://www.youtube.com/embed/tu59pFD50sQ",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms", 
       "key": "1b"
     },
     { "course" : "mBot",
@@ -27,6 +29,7 @@
       "analysis": "Although there are not many req for this program, keep in mind that we have to find a way to make this program continuous, only one light should be on and specify the color that each light will be. These are your programming concepts: loops, RGB, and how to interact with the mBot.",
       "design": "3.png",
       "video": "https://www.youtube.com/embed/8NBlibJKG7c",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms",
       "lessonFiles":["3.png"],
       "key": "1c"
     },
@@ -42,6 +45,7 @@
       "analysis":"This lesson requires more than robotics knowledge. We need a little bit of music knowledge and physics. Watch the video for the written music and the frequencies of the melody notes. But, don't worry if you don't know how to read music. The important thing is that you learn how to interact with the mBot speakers. The mBot can play notes from D0 to B8. If at the end you'd like to challenge yourself try to play your own melody!",
       "design":"4.png",
       "video":"https://www.youtube.com/embed/QFMPHPnKUS4",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms",
       "lessonFiles": ["4.png"],
       "key": "1d"
     },
@@ -56,6 +60,7 @@
       "analysis":"The mBot has a light sensor that can be used to measure the light levels in a room. It returns a value of 0-1024. However, these levels may vary. Therefore, before we can use the readings from the sensor, we have to calculate the mean of the light levels. To do this, we will take 10 measurements of the light levels and calculate the mean. If the light goes below 20% of the mean, the mBot will turn on its lights and make sound to work as a blackout alarm.",
       "design":"5.png",
       "video":"https://www.youtube.com/embed/QISGMVtna-4",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms",
       "lessonFiles": ["5.png"],
       "key": "1e"
     },
@@ -70,6 +75,7 @@
       "analysis":"The first step to build the Theremin is to determine the interval values for the note values. The 15 cm mark will be the lower bound and will trigger the highest note. The lowest note will trigger at the 50cm mark plus a 6-10 cm cushion to make sure it gets played. First we calculate the range by subtracting the lowest end from the high end (50-15 = 35). Then, to index the notes we will use the modulo operator, which returns the remainder of a division. We do the following to index the notes: Subtract the minimum value from the range to scale the range down to the values we are interested in. Use the mod operator to get the remainder from dividing the range by the number of intervals. Subtract the remainder from the range. Perform the division to get the index. For instance: we begin knowing that our range is 15-50cm. To play 7 notes: 50 -15 = 35, 35/7 = 5. Each note would have a 5 cm interval. If the sensor returns a value of 15.72cm, we subtract the result of the MOD operator to convert the to an integer (15.72 - (15.72MOD5) = 15.72-0.72 = 15). Lastly, by dividing this number by 5 we can calculate a value that represents our note.",
       "design":"6.png",
       "video":"https://www.youtube.com/embed/67NfXWDI_Nk",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms",
       "lessonFiles": ["6.png"],
       "key": "1f"
     },
@@ -83,6 +89,7 @@
       "analysis":"The line follower works by detecting differences in light intensity between the path to follow and the rest of the surface. Ideally, the path and the surface will have a lot of contrast. In the mBot the line-follower has two pairs of sensors that emit and receive infrared light. This makes it easy to detect if the mBot is on the path or if it is going off it. If both sensors are on the line it returns a value of 0 which tells us to mean forward; a value of 1 means the right sensor is off  so turn left slightly; and a value 2 means turn right. Using these values, we can follow a given path.  Nevertheless we will have to come up with a strategy to find the path if both sensors are off. In this case we will program the mBot to back up until it finds its path again.",
       "design":"7.png",
       "video":"https://www.youtube.com/embed/gxjQ19Q2rMI",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms",
       "lessonFiles": ["7.png"],
       "key": "1g"
     },
@@ -96,6 +103,7 @@
       "analysis": "This program is based on the code learned from the line follower lesson. We adapt it to respond to different events that could interrupt its course such as an object in the path or a stop sign. Using the ultrasonic sensor, we will program the mBot to detect objects and stop if there is something in its way. Using what we know from the line follower code, we will adapt it to react to a missing part in the path that represents a stop sign.",
       "design":"8.png",
       "video":"https://www.youtube.com/embed/0KxNMLLLSRU",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms",
       "lessonFiles": ["8.png"],
       "key": "1i"
     },
@@ -109,8 +117,93 @@
       "analysis":"This program is based on the code written in the last lesson. We will implement a strategy to find an available parking spot in which the mBot will check the right spot, then the left spot and if none is available it will continue through the circuit until a spot becomes available. This strategy requires some engineering and trial and error testing to determine the correct speed and time required to turn as accurately as possible to use the ultrasonic sensor located at the front of the mBot. Minor adjustments might be needed for the execution of the program since speed and time vary depending on the charge of the batteries.",
       "design":"9.png",
       "video":"https://www.youtube.com/embed/tk8J2LJx4Js",
+      "repo":"https://github.com/AsaelCorona115/mBotPrograms",
       "lessonFiles": ["9A.png", "9B.png"],
       "key": "1j"
     }
-  ]
+  ],
+ "AutomationLessons":[
+    { "course" : "Automation",
+    "number": "1",
+    "title": "Getting Started With Selenium",
+    "description":
+      "Learn the latest way to get started with Selenium!",
+    "presentation" : "In this lesson we will go over the most up to date way to get started. There are many tutorials out there however since this is an ever-evolving technology a lot of them are outdated. While initially doing these outdated methods won’t hurt once you get deep into your automation journey you will encounter a lot of awkward errors. Let’s avoid that by starting the proper way",
+    "objectives": ["Set up and start using selenium the proper way."],
+    "req": [],
+    "analysis": "This lesson is for programmer’s just starting. This lesson requires attention to details as well as knowing your way around an IDE. The IDE used in the video is Visual Studio Code a free tool for anyone to use.",
+    "video": "https://www.youtube.com/embed/rp6l5K6S6tI",
+    "repo":"https://github.com/ElvisFern/Autonomous-Robot-System",
+    "lessonFiles":["A1.png"],
+    "key": "1a"
+  },
+  { "course" : "Automation",
+    "number": "2",
+    "title": "By and Action Chains",
+    "description":
+      "After the first lesson is time to learn some of the most used classes in Selenium",
+    "presentation" : "In this lesson we will go over some of the most used classes in Selenium. Again, there were some outdated ways of using these classes which give birth to a plethora of weird errors such as your browser closing randomly, weird console warnings and even your script crashing. I highly encourage using the By class when looking for elements within any other class or function, will save you a lot of troubleshooting efforts.",
+    "objectives": ["Make a script that takes you to a page of your choosing and does an action of your choosing."],
+    "req": [],
+    "video": "https://www.youtube.com/embed/79OTCRjydAg",
+    "repo":"https://github.com/ElvisFern/Autonomous-Robot-System",
+    "lessonFiles":["A2.png"],
+    "key": "1b"
+  },
+  { "course" : "Automation",
+    "number": "3",
+    "title": "Automation of Systems (DonkeyCar and Coco Object Detection)",
+    "description":
+      "Is time to tackle a bigger challenge, learn how to create 2 systems working together to crate an object detection activated car",
+    "presentation" : "In this lesson we will go over the Automation of 2 systems working together to create and Object Detection activated car. These systems will be activated manually and independently, however once an object is detected by the car it will drive and stop without any human intervention. The two systems used to make this possible are DonkeyCar and Object Detection: Coco dataset. These are Neural Network based systems and are covered in some of our lessons in the Neural Network Systems part of our page.",
+    "objectives": ["Make a script that drives the car and stops the car."],
+    "design": "B1.png",
+    "req": [],
+    "video": "https://www.youtube.com/embed/_93jpNtrcr4",
+    "repo":"https://github.com/ElvisFern/Autonomous-Robot-System",
+    "lessonFiles":["A3.png"],
+    "key": "1c"
+  }
+  
+],
+"ArtificialIntelligenceLessons":[
+  { 
+  "course" : "ArtificialIntelligence",
+  "number": "1",
+  "title": "Intro to Neural Networks",
+  "description":
+    "Neural Networks.... take your first steps into this fascinating topic.",
+  "presentation" : "The topic of Neural Networks is the hot new trend in our field currently. This lesson set is made to introduce you to this topic. While exposing you at the highest level possible to the by-products of these concepts. However, before we dive into the systems this amazing topic created let’s take a second to understand what it is we will be working with.",
+  "req": [],
+  "video": "https://www.youtube.com/embed/rp6l5K6S6tI",
+  "repo":"https://github.com/ElvisFern/Autonomous-Robot-System",
+  "key": "1a"
+},
+{ "course" : "ArtificialIntelligence",
+  "number": "2",
+  "title": "Object Detection: Coco Dataset",
+  "description":
+    "How to find this system? How to run it and the code you need. All you need to make your own personal modifications!",
+  "presentation" : "In this lesson we will go over where to find this system. How to run it, as well as the code needed. We will also go over the code in detail so that you can make your own personal modifications, additions or different project all together. As we did with our own system broken down below.",
+  "req": [],
+  "design":"C2.png",
+  "video": "https://www.youtube.com/embed/3Wgox-_op88",
+  "repo":"https://github.com/ElvisFern/Automated-Car-Using-Object-Detection ",
+  "lessonFiles":["C2.png"],
+  "key": "1b"
+},
+{ "course" : "ArtificialIntelligence",
+  "number": "3",
+  "title": "DonkeyCar a Robotics Framework for Neural Networks",
+  "description":
+    "Build your own DonkeyCar System. Ideal for data collection strategies.",
+  "presentation" : "This lesson will cover how to build and operate your DonkeyCar system. This project is ideal for data collection strategies, getting started with Neural networks and many more applications within our computer science filed. Imagination is the limit. DonkeyCar was designed for Pulse Width Modulation systems, while most popular use is RC cars it is not limited to just that. Check the following links to learn how to do it! https://docs.donkeycar.com/ ,  https://github.com/autorope/donkeycar/tree/main/donkeycar ",
+  "analysis":"This is a very time-consuming endeavor mainly because you are dealing with many complex theories at the highest level of interaction. This will require time patience and dedication, don’t give up go on discord for support the community is very helpful. You will be working with many systems for this your own native OS, Raspbian Linux OS, and a lot of python code.",
+  "design": "C3.png",
+  "req": [],
+  "repo":"https://github.com/ElvisFern/Autonomous-Robot-System",
+  "key": "1c"
+}
+
+]
   }

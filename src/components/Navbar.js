@@ -29,9 +29,9 @@ const Navbar = () => {
                 <div className="col-lg-4 col-md-12 mt-5">
                   <Link
                     className="anyLink mainNavigationLink"
-                    to="/MatLabCourse"
+                    to="/ArtificialIntelligenceCourse"
                   >
-                    Matlab
+                    AI
                   </Link>
                 </div>
                 <div className="col-lg-4 col-md-12 mt-5">

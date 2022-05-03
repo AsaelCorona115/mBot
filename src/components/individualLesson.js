@@ -163,10 +163,7 @@ const IndividualLesson = (props) => {
                 <p className="fs-4 text-center">
                   Download it
                   <br />
-                  <a
-                    href="https://github.com/AsaelCorona115/mBotPrograms"
-                    target="_blank"
-                  >
+                  <a href={lessonInformation[0].repo} target="_blank">
                     here!
                   </a>
                 </p>

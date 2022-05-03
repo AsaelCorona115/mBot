@@ -10,9 +10,9 @@ const CourseSelector = () => {
       key: "ACourse",
     },
     {
-      titleCourse: "Matlab",
+      titleCourse: "ArtificialIntelligence",
       CourseDescription:
-        "Do you think programming is hard? Worry not! This course will help you learn basic concepts of programming in Scratch that are applicable to more advanced programming languages such as Python, C, or Javascript. All while working with the mBot! An affordable educational robot created for beginners!",
+        "Ever wondered what is AI? Heard of Object Detection?  While this course won’t be getting that advanced, we will touch on how to get you started on a couple of different systems with as little coding as possible. However we deeply encourage getting familiar with the Concepts that gave birth to these systems.",
       imgsrc:
         "https://logos-world.net/wp-content/uploads/2020/12/MATLAB-Symbol.jpg",
       key: "BCourse",
@@ -20,7 +20,7 @@ const CourseSelector = () => {
     {
       titleCourse: "Automation",
       CourseDescription:
-        "Do you think programming is hard? Worry not! This course will help you learn basic concepts of programming in Scratch that are applicable to more advanced programming languages such as Python, C, or Javascript. All while working with the mBot! An affordable educational robot created for beginners!",
+        "Maybe, you just have some annoying daily task you’d like to Automate. Or perhaps you’d like to just take a couple devices and systems and make them work together. In this course you’ll learn how to get started with Automation. Learn how to use Python Selenium,  the friendliest automation tool out there.",
       imgsrc:
         "https://enterprisersproject.com/sites/default/files/styles/google_discover/public/2021-09/cio_automation_ai.png?itok=Tc7MOn8n",
       key: "CCourse",
